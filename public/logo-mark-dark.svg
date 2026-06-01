@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width="200" height="200">
+  <g transform="translate(100 100) rotate(-4) translate(-100 -100)">
+    <path d="M 30 70 L 100 30 L 170 70 L 170 170 L 30 170 Z" fill="#e8552a" stroke="#c4441f" stroke-width="2" stroke-linejoin="round"/>
+    <path d="M 28 71 L 100 30 L 172 71 L 168 76 L 100 38 L 32 76 Z" fill="#1a2e1f"/>
+    <text x="100" y="138" font-family="Bebas Neue" font-size="76" fill="#f4f1ea" text-anchor="middle" letter-spacing="-1">CS</text>
+  </g>
+</svg>

@@ -1,0 +1,256 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+
+const title = 'ClubShed vs Spond for Football Equipment | Comparison';
+const description = 'Spond does fixtures and admin. ClubShed does equipment tracking. Honest comparison of when to use which, by someone who uses both.';
+const publishDate = '2026-05-21';
+const updateDate = '2026-05-21';
+---
+
+<BaseLayout title={title} description={description} type="article" publishDate={publishDate} updateDate={updateDate}>
+  <article class="compare-page">
+    <div class="container">
+
+      <header class="compare-page__header">
+        <span class="tag">Comparison</span>
+        <h1 class="display">ClubShed vs Spond for equipment tracking</h1>
+        <p class="compare-page__lede">
+          Spond is the default football club management tool in the UK and across Europe. ClubShed isn't trying to replace it. Here's an honest look at where each one fits, written by someone who uses both.
+        </p>
+      </header>
+
+      <section class="compare-page__tldr">
+        <h2 class="display">The short version</h2>
+        <p>Use Spond for fixtures, communication, payments, and member management. Use ClubShed for equipment tracking, audit reports, and grant applications. Total cost around €16-25 a month combined. They don't compete, they complement.</p>
+      </section>
+
+      <section class="compare-page__section">
+        <h2 class="display">What Spond does well</h2>
+        <p>Spond dominates grassroots club management in 2026 for good reasons. Its core strengths:</p>
+        <ul>
+          <li><strong>Communication.</strong> Group messaging, push notifications, parents and players in one place. The single biggest reason clubs use it.</li>
+          <li><strong>Fixture and event management.</strong> Match scheduling, attendance, RSVPs. This is its bread and butter.</li>
+          <li><strong>Payments.</strong> Subs collection, match fees, tour payments. Spond Pay handles the mechanics.</li>
+          <li><strong>Member management.</strong> Player profiles, parent contacts, safeguarding fields. Critical for any FA-accredited club.</li>
+          <li><strong>It's free.</strong> The base tier is genuinely free, which matters enormously to volunteer-run clubs.</li>
+        </ul>
+        <p>If you're not using Spond and you run a grassroots club, you probably should be. ClubShed doesn't change that recommendation.</p>
+      </section>
+
+      <section class="compare-page__section">
+        <h2 class="display">Where Spond falls short on equipment</h2>
+        <p>Spond has a basic asset/equipment feature, but it's an afterthought bolted onto the member management product. The specific gaps that hurt grassroots clubs:</p>
+        <ul>
+          <li><strong>No QR codes.</strong> You can't print stickers with scannable codes for items. Every check-out and check-in requires typing or searching.</li>
+          <li><strong>No condition tracking.</strong> An item is either listed or not. You can't grade it from 1-5 across seasons, so you can't see what needs replacing.</li>
+          <li><strong>No grant-ready audit report.</strong> The Football Foundation, FA Community Football Fund, and Sport England all want detailed equipment evidence for applications. Spond can't generate it.</li>
+          <li><strong>No seasonal structure.</strong> Equipment doesn't have a "start of season" snapshot, "end of season" audit, or "restock list" workflow.</li>
+          <li><strong>No bulk operations.</strong> Assigning 18 footballs across 4 teams takes 18 individual actions, not one.</li>
+          <li><strong>Not designed for the kit cupboard.</strong> The UX is desktop-shaped. Trying to add an item one-handed on a phone in a dim storage room is painful.</li>
+        </ul>
+      </section>
+
+      <section class="compare-page__section">
+        <h2 class="display">What ClubShed does well</h2>
+        <p>ClubShed exists specifically because of those gaps. Its scope is deliberately narrow:</p>
+        <ul>
+          <li><strong>Built for equipment, only.</strong> Every workflow is designed around the kit-cupboard reality: phone-first, one-handed, fast.</li>
+          <li><strong>QR sticker generation.</strong> Print labels for every item. Scan to check out or check in.</li>
+          <li><strong>Condition grading.</strong> 1-5 rating per item, tracked over time. Surfaces what needs replacing.</li>
+          <li><strong>Grant audit report.</strong> One-click PDF for Football Foundation, FA Community Football Fund, Sport England, and DACH/Spain equivalents. Built around what grant reviewers actually want.</li>
+          <li><strong>Seasonal structure.</strong> Pre-season restock mode, in-season tracking, end-of-season audit wizard.</li>
+          <li><strong>Bulk operations.</strong> Allocate 18 balls across 4 teams in three taps with "split evenly across teams."</li>
+          <li><strong>Audit log.</strong> Every check-out and check-in is timestamped. When something goes missing, you know exactly where to look.</li>
+        </ul>
+      </section>
+
+      <section class="compare-page__section">
+        <h2 class="display">What ClubShed deliberately doesn't do</h2>
+        <p>Equally important to be clear about. ClubShed is not building these features. If you need them, use Spond:</p>
+        <ul>
+          <li>Player and parent communication</li>
+          <li>Match scheduling and RSVPs</li>
+          <li>Subs and fee collection</li>
+          <li>Member profiles and safeguarding records</li>
+          <li>Attendance tracking</li>
+          <li>Tour and event payments</li>
+        </ul>
+        <p>If a feature is more about people than about gear, Spond does it better. Trying to do both would make ClubShed worse at the thing it actually does well.</p>
+      </section>
+
+      <section class="compare-page__section compare-page__decision">
+        <h2 class="display">Which should you use?</h2>
+        <div class="compare-page__decision-grid">
+          <div class="compare-page__decision-card">
+            <h3>Use only Spond if:</h3>
+            <ul>
+              <li>You have fewer than 20 items of equipment in total</li>
+              <li>You haven't lost meaningful gear in the last year</li>
+              <li>You don't apply for grants</li>
+              <li>You don't have a dedicated kit person or rotation</li>
+            </ul>
+          </div>
+          <div class="compare-page__decision-card">
+            <h3>Add ClubShed if:</h3>
+            <ul>
+              <li>You're losing more than £200-£500 of equipment per season</li>
+              <li>You manage multiple teams' kit</li>
+              <li>You want to apply for FA, Football Foundation, or Sport England grants</li>
+              <li>Your kit man wants a real audit trail</li>
+              <li>Spreadsheets have stopped working for you</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <section class="compare-page__section">
+        <h2 class="display">Total cost comparison</h2>
+        <p>For a typical grassroots club with three teams running both tools:</p>
+        <ul>
+          <li>Spond: free (the base tier covers most clubs)</li>
+          <li>Spond Plus (optional, for advanced features): around €5/month</li>
+          <li>ClubShed Free: €0 for one team and 30 items</li>
+          <li>ClubShed Club: €15.99/month for unlimited teams, items, and the audit report feature</li>
+        </ul>
+        <p>If you're a small club, both tools are free. If you're a bigger club using everything, you're looking at roughly €21 a month combined. Compared to the cost of replacing six lost balls and a bibs set, the maths is straightforward.</p>
+      </section>
+
+      <section class="compare-page__cta">
+        <h2 class="display">Try ClubShed</h2>
+        <p>Free for one team and 30 items. No card required. Keep using Spond for everything else.</p>
+        <a href="https://app.clubshed.pro/signup" class="btn btn--accent">Start free</a>
+      </section>
+
+      <aside class="compare-page__related">
+        <h3>Related</h3>
+        <ul>
+          <li><a href="/blog/end-of-season-equipment-audit/">How to run an end-of-season equipment audit</a></li>
+          <li><a href="/blog/grassroots-football-equipment-guide/">The grassroots equipment management guide</a></li>
+          <li><a href="/about/">About ClubShed</a></li>
+        </ul>
+      </aside>
+
+    </div>
+  </article>
+</BaseLayout>
+
+<style>
+  .compare-page {
+    padding: clamp(3rem, 6vw, 5rem) 0 clamp(4rem, 8vw, 6rem);
+  }
+  .compare-page .container {
+    max-width: 760px;
+  }
+  .compare-page__header {
+    margin-bottom: 2.5rem;
+  }
+  .compare-page__header .tag {
+    margin-bottom: 1.5rem;
+  }
+  .compare-page__header h1 {
+    font-size: clamp(2.25rem, 5vw, 3.75rem);
+    margin-bottom: 1.5rem;
+    line-height: 1;
+  }
+  .compare-page__lede {
+    font-size: clamp(1.05rem, 1.4vw, 1.2rem);
+    color: var(--muted);
+    line-height: 1.55;
+  }
+  .compare-page__tldr {
+    background: var(--chalk-warm);
+    border-left: 4px solid var(--kit-orange);
+    padding: 1.75rem 2rem;
+    margin-bottom: 3rem;
+  }
+  .compare-page__tldr h2 {
+    font-size: 1.4rem;
+    margin-bottom: 0.75rem;
+  }
+  .compare-page__tldr p {
+    margin: 0;
+    line-height: 1.6;
+  }
+  .compare-page__section {
+    margin-bottom: 3rem;
+  }
+  .compare-page__section h2 {
+    margin-bottom: 1.25rem;
+    font-size: clamp(1.6rem, 3vw, 2.25rem);
+  }
+  .compare-page__section p {
+    margin-bottom: 1.1rem;
+    line-height: 1.65;
+    max-width: 66ch;
+  }
+  .compare-page__section ul {
+    margin: 0 0 1.25rem 1.25rem;
+    max-width: 66ch;
+  }
+  .compare-page__section li {
+    margin-bottom: 0.6rem;
+    line-height: 1.55;
+  }
+  .compare-page__section strong {
+    font-weight: 600;
+  }
+  .compare-page__decision-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.5rem;
+  }
+  @media (max-width: 640px) {
+    .compare-page__decision-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+  .compare-page__decision-card {
+    background: var(--chalk-warm);
+    border: 2px solid var(--asphalt);
+    border-radius: var(--radius);
+    padding: 1.5rem;
+  }
+  .compare-page__decision-card h3 {
+    font-family: var(--font-display);
+    font-size: 1.2rem;
+    margin-bottom: 1rem;
+  }
+  .compare-page__decision-card ul {
+    margin-bottom: 0;
+  }
+  .compare-page__cta {
+    margin-top: 4rem;
+    padding: 2.5rem 2rem;
+    background: var(--pitch-deep);
+    color: var(--chalk);
+    border-radius: var(--radius);
+    text-align: center;
+  }
+  .compare-page__cta h2 {
+    margin-bottom: 1rem;
+  }
+  .compare-page__cta p {
+    margin: 0 auto 1.5rem;
+    max-width: 50ch;
+    opacity: 0.85;
+  }
+  .compare-page__related {
+    margin-top: 3rem;
+    padding-top: 2rem;
+    border-top: 1px solid var(--line);
+  }
+  .compare-page__related h3 {
+    font-family: var(--font-display);
+    font-size: 1.2rem;
+    margin-bottom: 1rem;
+  }
+  .compare-page__related ul {
+    list-style: none;
+    padding: 0;
+  }
+  .compare-page__related a {
+    color: var(--kit-orange);
+    text-decoration: underline;
+    text-underline-offset: 3px;
+  }
+</style>

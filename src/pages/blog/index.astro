@@ -1,0 +1,132 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+
+const title = 'Blog | ClubShed: Running a Grassroots Football Club';
+const description = 'Practical guides for grassroots football volunteers. Equipment management, club admin, fundraising, and the unglamorous stuff that keeps clubs alive.';
+
+// Static post list for now; switch to content collections later
+const posts = [
+  {
+    slug: 'football-foundation-grants-equipment-grassroots',
+    title: 'Football Foundation Grants for Equipment: A Guide for Grassroots Clubs',
+    excerpt: 'A practical walkthrough of the grants your grassroots football club can actually apply for in 2026. What you can spend on, what your application needs, and what tends to get rejected.',
+    date: '2026-06-01',
+    readTime: '15 min',
+    tag: 'Grants',
+  },
+  {
+    slug: 'end-of-season-equipment-audit',
+    title: 'How to Run an End-of-Season Equipment Audit at Your Grassroots Football Club',
+    excerpt: 'Step-by-step audit playbook for clubs. Count what survived, mark what is lost, produce a report that wins FA Community Football Fund grants. Built from a club that does this every May.',
+    date: '2026-05-21',
+    readTime: '14 min',
+    tag: 'Audit',
+  },
+  {
+    slug: 'grassroots-football-equipment-guide',
+    title: 'The Grassroots Football Club Guide to Stopping Equipment From Disappearing',
+    excerpt: 'A practical playbook for clubs that lose €1,000+ in balls, bibs, and cones every season. No software required to start, but it helps.',
+    date: '2026-05-19',
+    readTime: '11 min',
+    tag: 'Equipment',
+  },
+];
+---
+
+<BaseLayout title={title} description={description}>
+  <section class="blog-hero">
+    <div class="container">
+      <span class="tag">Blog</span>
+      <h1 class="display">Running a club is hard.<br />Here's some honest help.</h1>
+      <p class="blog-lede">Practical guides for the people doing the unglamorous work. No fluff, no listicles built for SEO points, no AI slop. Things we actually learned doing this.</p>
+    </div>
+  </section>
+
+  <section class="post-list">
+    <div class="container">
+      {posts.map((post) => (
+        <article class="post-card">
+          <div class="post-card__meta">
+            <span class="tag tag--filled">{post.tag}</span>
+            <span class="post-card__date">{new Date(post.date).toLocaleDateString('en-GB', { day: 'numeric', month: 'short', year: 'numeric' })}</span>
+            <span class="post-card__time">{post.readTime}</span>
+          </div>
+          <h2 class="display">
+            <a href={`/blog/${post.slug}/`}>{post.title}</a>
+          </h2>
+          <p>{post.excerpt}</p>
+          <a href={`/blog/${post.slug}/`} class="post-card__more">Read the guide →</a>
+        </article>
+      ))}
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  .blog-hero {
+    padding-top: clamp(3rem, 6vw, 5rem);
+  }
+
+  .blog-hero .tag {
+    margin-bottom: 1.5rem;
+  }
+
+  .blog-lede {
+    margin-top: 1.5rem;
+    color: var(--muted);
+    font-size: 1.05rem;
+    max-width: 56ch;
+  }
+
+  .post-list {
+    padding-top: 2rem;
+  }
+
+  .post-card {
+    max-width: 760px;
+    padding: 2rem 0;
+    border-bottom: 1px solid var(--line);
+  }
+
+  .post-card__meta {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 1.25rem;
+    font-family: var(--font-mono);
+    font-size: 0.78rem;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+  }
+
+  .post-card__date,
+  .post-card__time {
+    color: var(--muted);
+  }
+
+  .post-card h2 {
+    font-size: clamp(1.6rem, 3vw, 2.4rem);
+    margin-bottom: 1rem;
+    line-height: 1.05;
+  }
+
+  .post-card h2 a {
+    color: var(--asphalt);
+    transition: color 0.15s ease;
+  }
+
+  .post-card h2 a:hover {
+    color: var(--kit-orange);
+  }
+
+  .post-card p {
+    color: var(--muted);
+    margin-bottom: 1rem;
+  }
+
+  .post-card__more {
+    color: var(--kit-orange);
+    font-weight: 600;
+    font-size: 0.95rem;
+  }
+</style>

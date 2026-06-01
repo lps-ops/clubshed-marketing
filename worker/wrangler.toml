@@ -1,0 +1,25 @@
+name = "clubshed-email"
+main = "index.js"
+compatibility_date = "2026-01-01"
+
+# Routes the worker to api.clubshed.pro.
+# After first deploy, you'll also need to add a CNAME for "api" in Cloudflare DNS
+# (DNS only, grey cloud) pointing to your worker's *.workers.dev URL,
+# OR use a Custom Domain in the worker's settings (recommended, automatic).
+routes = [
+  { pattern = "api.clubshed.pro/*", zone_name = "clubshed.pro" }
+]
+
+# KV namespace for rate limiting.
+# Create the namespace first with: wrangler kv namespace create RATE_LIMIT
+# Then paste the returned id below.
+# If you skip this, rate limiting just no-ops (still safe, just less protected).
+# [[kv_namespaces]]
+# binding = "RATE_LIMIT"
+# id = "REPLACE_WITH_KV_NAMESPACE_ID"
+
+# Environment variables (non-secret).
+# Secrets like RESEND_API_KEY are set separately via:
+#   wrangler secret put RESEND_API_KEY
+[vars]
+HONEYPOT_FIELD = "website"

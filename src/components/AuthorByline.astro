@@ -1,0 +1,113 @@
+---
+interface Props {
+  publishDate: string;
+  updateDate?: string;
+  readTime: string;
+}
+
+const { publishDate, updateDate, readTime } = Astro.props;
+
+const formatDate = (d: string) =>
+  new Date(d).toLocaleDateString('en-GB', {
+    day: 'numeric',
+    month: 'long',
+    year: 'numeric',
+  });
+---
+
+<div class="byline">
+  <div class="byline__avatar" aria-hidden="true">L</div>
+  <div class="byline__body">
+    <div class="byline__author">
+      <span class="byline__name">Lucas Seewald</span>
+      <a href="/about/" class="byline__credential">Co-founder, HVV Football Factory</a>
+    </div>
+    <div class="byline__meta">
+      <span>Published {formatDate(publishDate)}</span>
+      {updateDate && updateDate !== publishDate && (
+        <>
+          <span class="byline__dot" aria-hidden="true">·</span>
+          <span>Updated {formatDate(updateDate)}</span>
+        </>
+      )}
+      <span class="byline__dot" aria-hidden="true">·</span>
+      <span>{readTime}</span>
+    </div>
+  </div>
+</div>
+
+<style>
+  .byline {
+    display: flex;
+    gap: 1rem;
+    align-items: flex-start;
+    padding: 1.25rem 0 1.5rem;
+    border-top: 1px solid var(--line);
+    border-bottom: 1px solid var(--line);
+    margin: 1.5rem 0 2.5rem;
+  }
+
+  .byline__avatar {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    background: var(--pitch);
+    color: var(--chalk);
+    display: grid;
+    place-items: center;
+    font-family: var(--font-display);
+    font-size: 1.4rem;
+    flex-shrink: 0;
+    margin-top: 2px;
+  }
+
+  .byline__body {
+    flex: 1;
+    min-width: 0;
+  }
+
+  .byline__author {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: baseline;
+    gap: 0.5rem 0.75rem;
+    margin-bottom: 0.35rem;
+  }
+
+  .byline__name {
+    font-family: var(--font-display);
+    font-size: 1.15rem;
+    line-height: 1;
+    letter-spacing: 0.01em;
+  }
+
+  .byline__credential {
+    font-size: 0.82rem;
+    color: var(--muted);
+    text-decoration: underline;
+    text-decoration-color: var(--line);
+    text-underline-offset: 3px;
+    transition: color 0.15s ease, text-decoration-color 0.15s ease;
+  }
+
+  .byline__credential:hover {
+    color: var(--kit-orange);
+    text-decoration-color: var(--kit-orange);
+  }
+
+  .byline__meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.4rem;
+    align-items: center;
+    font-family: var(--font-mono);
+    font-size: 0.74rem;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    color: var(--muted);
+  }
+
+  .byline__dot {
+    opacity: 0.5;
+  }
+</style>

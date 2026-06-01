@@ -1,0 +1,317 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import AuthorByline from '../../components/AuthorByline.astro';
+
+const title = "End-of-Season Equipment Audit Guide for Football Clubs | ClubShed";
+const description = "Step-by-step audit playbook for grassroots clubs. Count what survived, mark lost items, produce a grant-ready report. Written by a club that does this every May.";
+const publishDate = '2026-05-21';
+const updateDate = '2026-05-21';
+---
+
+<BaseLayout title={title} description={description} type="article" publishDate={publishDate} updateDate={updateDate}>
+  <article class="post">
+    <div class="container">
+
+      <header class="post-header">
+        <div class="post-header__meta">
+          <span class="tag tag--filled">Audit</span>
+        </div>
+        <h1 class="display">How to Run an End-of-Season Equipment Audit at Your Grassroots Football Club</h1>
+        <p class="post-header__lede">
+          The season is over. Your kit cupboard is half empty. Your committee wants a budget for next year. Here's the exact process for getting from chaos to a grant-ready audit report in one weekend.
+        </p>
+        <AuthorByline publishDate={publishDate} updateDate={updateDate} readTime="14 min read" />
+      </header>
+
+      <div class="post-toc">
+        <strong>What's in this guide</strong>
+        <ol>
+          <li><a href="#when">When to run the audit (and why most clubs do it wrong)</a></li>
+          <li><a href="#prep">The 30-minute prep that saves you a Saturday</a></li>
+          <li><a href="#count">Step 1: Count what survived</a></li>
+          <li><a href="#out">Step 2: Resolve what's still out with coaches</a></li>
+          <li><a href="#condition">Step 3: Grade the condition of everything</a></li>
+          <li><a href="#lost">Step 4: Mark what's lost and what's retired</a></li>
+          <li><a href="#report">Step 5: Build the report your committee and the FA actually want</a></li>
+          <li><a href="#restock">What to do with the audit: restock planning and grant applications</a></li>
+          <li><a href="#mistakes">Five mistakes that ruin an audit</a></li>
+        </ol>
+      </div>
+
+      <section id="when" class="post-section">
+        <h2 class="display">When to run the audit (and why most clubs do it wrong)</h2>
+        <p>The European grassroots football season ends in May or June for most leagues, depending on age group. The conventional wisdom is to do your audit in August, when you start preparing for the new season. That's wrong. By August you've forgotten where the bibs went in March, the coach who took the goalkeeper gloves home has moved house, and you've already wasted six weeks where you could have been applying for grants.</p>
+        <p>The right time to audit is in the two-week window between your last match and your committee's summer break. For most UK and DACH clubs, that's late May to mid-June. Do it within 14 days of the final whistle, while memory is fresh and people are still answering your messages.</p>
+        <p>I've made this mistake. At HVV Football Factory we put the audit off until August one summer and ended up writing off £600 worth of gear that one of our coaches actually had in his car the whole time, but we'd already replaced it. That was the year I started doing audits in May.</p>
+      </section>
+
+      <section id="prep" class="post-section">
+        <h2 class="display">The 30-minute prep that saves you a Saturday</h2>
+        <p>Before you set foot in the kit cupboard, do three things from your kitchen table.</p>
+        <p><strong>Find last year's audit (if you have one).</strong> If you don't, this guide is also a template for starting from zero. Either way, you need a baseline. A spreadsheet, a Word document, a photo of the cupboard from August - anything that tells you what you owned at the start of the season.</p>
+        <p><strong>Message every coach.</strong> Send one WhatsApp message to your coaches' group chat asking them to return anything they have at home by [specific date - pick one inside your audit window]. Don't ask for an inventory. Just ask for the gear back. Be specific about the date and the drop-off location. Most clubs don't do this and then wonder why their audit takes a month.</p>
+        <p>Sample message: <em>"Quick one before the audit - if you've got club kit, balls, bibs, cones or anything else at home from the season, can you drop it back at [location] by Saturday 7 June? After that we'll mark anything missing as lost and ask the committee to replace it. Thanks all."</em></p>
+        <p><strong>Block off a Saturday morning.</strong> Two to three hours if you're using software, four to six if you're doing it on paper or in a spreadsheet for the first time. Bring coffee. Bring a second volunteer if you can - auditing solo means nobody to double-check counts and nobody to argue with about whether a worn ball is "Good" or "Worn." Two pairs of eyes catch more than one.</p>
+      </section>
+
+      <section id="count" class="post-section">
+        <h2 class="display">Step 1: Count what survived</h2>
+        <p>Open the cupboard. Photograph the inside before you touch anything - useful baseline for next year. Then start counting, category by category.</p>
+        <p>Use these categories. They map to how clubs actually buy and account for equipment, and they match what grant applications ask for:</p>
+        <ul>
+          <li><strong>Match balls</strong>: the size 5 (or whichever is your league's match ball) that you'd use in a real game</li>
+          <li><strong>Training balls</strong>: anything you use for training, including the cheap multi-pack stuff</li>
+          <li><strong>Bibs</strong>: count by set (a set is usually 10), not by individual bib. Note the colour of each set.</li>
+          <li><strong>Cones</strong>: count flat-disc and traffic-cone separately if you have both. Round to the nearest 10 for inventory.</li>
+          <li><strong>Goalkeeper gear</strong>: gloves (pairs), goalkeeper-specific kit if you have it</li>
+          <li><strong>Match kit</strong>: count complete sets per team (shirt + shorts + socks). Note any missing components.</li>
+          <li><strong>Training kit</strong>: separate from match kit. Bibs go in their own category above.</li>
+          <li><strong>Goals and nets</strong>: count pop-up goals, full-size posts (if you own them rather than the council), and net condition</li>
+          <li><strong>Safety equipment</strong>: first aid kits, defibrillator if you have one (check the battery and pads expiry), ice packs</li>
+          <li><strong>Storage and transport</strong>: kit bags, ball bags, equipment trolleys, hard cases</li>
+          <li><strong>Miscellaneous</strong>: whistles, ball pumps, stopwatches, the things that always go missing</li>
+        </ul>
+        <p>Write down two numbers for each category: what you started the season with (from last year's audit), and what you have now. The gap is your loss rate. If you're starting from zero, this becomes year-one baseline.</p>
+      </section>
+
+      <section id="out" class="post-section">
+        <h2 class="display">Step 2: Resolve what's still out with coaches</h2>
+        <p>If you sent the coaches' message in the prep step, most things should be back already. For anything still out:</p>
+        <p><strong>Send a final reminder.</strong> One per coach, individually, not in the group chat. Ask specifically about the items you know they had. If your records say Coach Marco took six match balls and a bibs set in March, ask Marco about those specific items. Vague reminders ("anything you've got?") get ignored. Specific ones don't.</p>
+        <p><strong>Set a hard cutoff.</strong> 48 hours from your reminder is plenty. After that, treat anything outstanding as lost. Coaches who get a polite warning that gear will be marked lost almost always find it within those 48 hours.</p>
+        <p><strong>Document everything.</strong> Write down who had what, when it was last seen, and what happened to it. This becomes important if there's a future dispute and matters a lot for grant applications, which often want to know how you track equipment.</p>
+        <p>One realistic note: every club has a coach who simply doesn't respond. After two follow-ups and a hard cutoff, accept that the gear is gone. Don't let one unresponsive coach hold up your audit. Mark it lost, move on, and have a conversation about it at the next committee meeting.</p>
+      </section>
+
+      <section id="condition" class="post-section">
+        <h2 class="display">Step 3: Grade the condition of everything</h2>
+        <p>This is the step most clubs skip. It's also the step that turns your audit from "we have 18 balls" into "we have 12 usable balls and 6 that need replacing." Grant applications want the second number, not the first.</p>
+        <p>Use a five-point scale:</p>
+        <ol>
+          <li><strong>Excellent</strong>: almost new, no visible wear, would be fine for a match</li>
+          <li><strong>Good</strong>: visible use but fully functional, would use for training without hesitation</li>
+          <li><strong>Worn</strong>: clearly used a lot, still functional but starting to show its age</li>
+          <li><strong>Damaged</strong>: still usable but with specific problems (split seam, faded markings, torn bib)</li>
+          <li><strong>Needs replacing</strong>: at the end of its useful life, would not buy more of this if starting fresh</li>
+        </ol>
+        <p>Grade ruthlessly. The temptation is to be optimistic ("still got another season in it") because admitting things are worn means admitting you need to spend money. Fight that temptation. The whole point of the audit is to surface the spend you actually need, not to pretend you're fine.</p>
+        <p>A grader's tip: if you wouldn't be happy receiving this item as a brand-new club, it's not "Good." Grade it down.</p>
+      </section>
+
+      <section id="lost" class="post-section">
+        <h2 class="display">Step 4: Mark what's lost and what's retired</h2>
+        <p>There's a meaningful difference between these two categories and grant applications care about it.</p>
+        <p><strong>Lost</strong> means you can't account for it. It walked off, got taken home, fell out of a kit bag, never came back. Lost items represent a process failure: your tracking didn't catch where it went. Grant reviewers reading your application will assume that without better tracking, the same loss rate will continue. The mitigating fact you want to surface is that you've put a system in place - whether that's ClubShed, a spreadsheet, or just a new check-in/check-out rule for next season.</p>
+        <p><strong>Retired</strong> means the item served its useful life and you're decommissioning it deliberately. Balls that have lost shape after two seasons of training are retired, not lost. Worn-out bibs that you're replacing because they've reached the end of the line are retired. Retired items represent normal wear-and-tear and are expected costs. Grant applications fund replacement of retired equipment without scrutiny.</p>
+        <p>Some clubs lump these together. Don't. The split tells the story of how your club actually operates.</p>
+      </section>
+
+      <section id="report" class="post-section">
+        <h2 class="display">Step 5: Build the report your committee and the FA actually want</h2>
+        <p>An audit that lives in your head is useless. The point of doing all the counting and grading is to produce a document. That document does double duty: it's the input to your committee's next budget meeting, and it's the supporting evidence for any grant application you make over the summer.</p>
+        <p>The report has six sections.</p>
+        <p><strong>1. Club identification.</strong> Club name, FA-affiliated league, registered charity number if applicable, accreditation status (England Football Accredited, FA Charter Standard, similar), number of teams, total registered players. Grant reviewers want this on page one.</p>
+        <p><strong>2. Audit methodology.</strong> Two sentences. "Audit conducted on [date] by [name]. Verified physical inventory against the prior season's records and active check-out log." If you used software like ClubShed, mention it - auditors trust systems they can verify.</p>
+        <p><strong>3. Summary table.</strong> One row per category. Columns: started with, ended with, lost, retired, in good condition. A reviewer should be able to read this table in 30 seconds and understand your club's whole equipment picture.</p>
+        <p><strong>4. Loss analysis.</strong> What did you lose and why. Be honest. "Six match balls lost across the season, primarily during away matches where we lack a clear post-match return protocol." This kind of analysis is exactly what grant reviewers reward, because it shows you understand your own operations.</p>
+        <p><strong>5. Replacement plan.</strong> What needs replacing for the next season, with quantities and indicative costs. Use real prices from a real supplier (Decathlon, the FA shop, a local supplier). Round numbers up slightly to account for VAT and delivery.</p>
+        <p><strong>6. Photographs.</strong> Two or three at most. One of the cupboard. One of the worst-condition item being retired. One of the new restock list. Visual evidence makes the document feel real to a grant reviewer.</p>
+        <p>The report should fit on three to four A4 pages. Longer reports get skimmed. Shorter ones look unserious. Three to four pages is the sweet spot.</p>
+      </section>
+
+      <section id="restock" class="post-section">
+        <h2 class="display">What to do with the audit: restock planning and grant applications</h2>
+        <p>The audit is the input. Two outputs matter.</p>
+        <p><strong>Output one: the restock list.</strong> This is your shopping list for the new season. Categorise it by priority. Tier one: safety equipment (first aid restocks, defibrillator pads if expired, match balls without which you can't play). Tier two: training essentials (bibs, cones, training balls). Tier three: nice-to-haves that improve the player experience but aren't season-blockers.</p>
+        <p>Get prices from real suppliers. Add 10% for VAT and 5% for delivery. Bring this list to your next committee meeting with a clear ask: approve tier one immediately, tier two by [date], tier three subject to fundraising or grants.</p>
+        <p><strong>Output two: the grant applications.</strong> Most grassroots football grants in the UK and Europe open between May and August, with deadlines clustered in June and July. The major ones worth applying to with an equipment audit are:</p>
+        <ul>
+          <li><strong>The Football Foundation Grow the Game grant</strong>: up to £1,500 for grassroots clubs in England, supports kit and equipment for new teams</li>
+          <li><strong>The FA Community Football Fund</strong>: administered by County FAs, varying amounts and criteria by region</li>
+          <li><strong>Sport England Small Grants</strong>: between £300 and £15,000 for community sport organisations</li>
+          <li><strong>Local authority and council sports grants</strong>: every UK council has different schemes; check yours</li>
+          <li>In Germany: <strong>Sportverband grants from your Landesverband</strong>, plus <strong>Sportförderung</strong> from your municipality</li>
+          <li>In Spain: <strong>Federación Española grants</strong>, plus regional federations and municipal sports budgets</li>
+        </ul>
+        <p>An audit report is the single most useful document for these applications because it answers the question every grant reviewer is silently asking: "is this club organised enough to actually use the money well?" A specific, dated, evidence-backed audit answers yes. A vague "we need new equipment" application answers no.</p>
+      </section>
+
+      <section id="mistakes" class="post-section">
+        <h2 class="display">Five mistakes that ruin an audit</h2>
+        <p><strong>Doing it without a baseline.</strong> If you don't know what you owned at the start, you can't measure what you lost. Even a rough estimate from memory beats nothing. For year one, this guide becomes your baseline-setting process; for every year after, you have proper data.</p>
+        <p><strong>Letting it drag on for weeks.</strong> The audit has to happen inside a tight window. If you're three weeks in and still chasing one coach, mark his stuff lost and finish. The audit's value is in the report, not in 100% recovery.</p>
+        <p><strong>Skipping the condition grading.</strong> Counting without grading gives you a flattering total that hides the truth. You might have 18 balls but only 12 you'd actually use in a match. Grade everything.</p>
+        <p><strong>Auditing solo.</strong> Two pairs of eyes catch counting errors. They also keep each other honest about condition grades. Even if your second volunteer is just there to write things down while you call them out, the audit is materially better.</p>
+        <p><strong>Treating the report as homework instead of a tool.</strong> If the audit report sits in a Google Drive folder unread, the audit was a waste of time. The report's job is to drive decisions: budget, grants, restock priorities. Get it in front of your committee within a week of completion.</p>
+      </section>
+
+      <section class="post-cta">
+        <h2 class="display">Want this audit to take an hour instead of a Saturday?</h2>
+        <p>ClubShed runs the audit for you. Every check-out and check-in is already logged. The condition grades come from your weekly use. The grant-ready PDF generates in one click. Free for one team and 30 items.</p>
+        <a href="https://app.clubshed.pro/signup" class="btn btn--accent">Start free</a>
+      </section>
+
+      <aside class="post-related">
+        <h3>Related guides</h3>
+        <ul>
+          <li><a href="/blog/grassroots-football-equipment-guide/">The grassroots football club guide to stopping equipment from disappearing</a></li>
+        </ul>
+      </aside>
+
+    </div>
+  </article>
+</BaseLayout>
+
+<style>
+  .post {
+    padding: clamp(3rem, 6vw, 5rem) 0 clamp(4rem, 8vw, 6rem);
+  }
+
+  .post .container {
+    max-width: 760px;
+  }
+
+  .post-header {
+    margin-bottom: 2rem;
+  }
+
+  .post-header__meta {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .post-header h1 {
+    font-size: clamp(2.25rem, 5vw, 4rem);
+    margin-bottom: 1.5rem;
+    line-height: 1;
+  }
+
+  .post-header__lede {
+    font-size: clamp(1.1rem, 1.5vw, 1.25rem);
+    color: var(--muted);
+    line-height: 1.5;
+  }
+
+  .post-toc {
+    background: var(--chalk-warm);
+    border-left: 4px solid var(--kit-orange);
+    padding: 1.5rem 1.75rem;
+    margin-bottom: 3rem;
+  }
+
+  .post-toc strong {
+    display: block;
+    font-family: var(--font-display);
+    font-size: 1rem;
+    letter-spacing: 0.05em;
+    margin-bottom: 0.75rem;
+  }
+
+  .post-toc ol {
+    list-style: decimal;
+    padding-left: 1.25rem;
+  }
+
+  .post-toc li {
+    margin-bottom: 0.4rem;
+    font-size: 0.95rem;
+  }
+
+  .post-toc a {
+    color: var(--asphalt);
+    text-decoration: underline;
+    text-decoration-color: var(--line);
+    text-underline-offset: 3px;
+  }
+
+  .post-toc a:hover {
+    text-decoration-color: var(--kit-orange);
+  }
+
+  .post-section {
+    margin-bottom: 3rem;
+    scroll-margin-top: 100px;
+  }
+
+  .post-section h2 {
+    margin-bottom: 1.25rem;
+    font-size: clamp(1.6rem, 3vw, 2.5rem);
+  }
+
+  .post-section p {
+    margin-bottom: 1.1rem;
+    line-height: 1.65;
+    max-width: 66ch;
+  }
+
+  .post-section ul,
+  .post-section ol {
+    margin: 0 0 1.25rem 1.25rem;
+    max-width: 66ch;
+  }
+
+  .post-section li {
+    margin-bottom: 0.5rem;
+    line-height: 1.6;
+  }
+
+  .post-section strong {
+    font-weight: 600;
+  }
+
+  .post-section em {
+    font-style: italic;
+    color: var(--muted);
+  }
+
+  .post-section a {
+    color: var(--kit-orange);
+    text-decoration: underline;
+    text-underline-offset: 3px;
+  }
+
+  .post-cta {
+    margin-top: 4rem;
+    padding: 2.5rem 2rem;
+    background: var(--pitch-deep);
+    color: var(--chalk);
+    border-radius: var(--radius);
+    text-align: center;
+  }
+
+  .post-cta h2 {
+    margin-bottom: 1rem;
+  }
+
+  .post-cta p {
+    margin: 0 auto 1.5rem;
+    max-width: 50ch;
+    opacity: 0.85;
+  }
+
+  .post-related {
+    margin-top: 3rem;
+    padding-top: 2rem;
+    border-top: 1px solid var(--line);
+  }
+
+  .post-related h3 {
+    font-family: var(--font-display);
+    font-size: 1.2rem;
+    margin-bottom: 1rem;
+    letter-spacing: 0.02em;
+  }
+
+  .post-related ul {
+    list-style: none;
+    padding: 0;
+  }
+
+  .post-related a {
+    color: var(--kit-orange);
+    text-decoration: underline;
+    text-underline-offset: 3px;
+  }
+</style>
