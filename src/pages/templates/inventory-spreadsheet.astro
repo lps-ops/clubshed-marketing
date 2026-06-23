@@ -1,0 +1,371 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+
+const title = 'Free Football Club Inventory Spreadsheet | ClubShed';
+const description = 'Free Google Sheets template for grassroots football equipment. Five sheets: instructions, inventory, loans log, audit, setup. Built by a club.';
+
+// The worker URL. Defaults to the production endpoint. Override locally if needed.
+const apiUrl = 'https://api.clubshed.pro/api/lead-magnet';
+const directDownloadUrl = '/ClubShed-Inventory-Template.xlsx';
+---
+
+<BaseLayout title={title} description={description}>
+  <article class="template-page">
+    <div class="container">
+
+      <header class="template-page__header">
+        <span class="tag">Free download</span>
+        <h1 class="display">Free football club inventory spreadsheet</h1>
+        <p class="template-page__lede">
+          A working spreadsheet template for tracking your club's equipment. Five sheets, ready to use. Built by a grassroots club, not a software company.
+        </p>
+      </header>
+
+      <section class="template-page__form-section">
+        <h2 class="display">Get the template</h2>
+        <p class="template-page__form-lede">Enter your email and we'll send it to you. No newsletter, no marketing nonsense.</p>
+
+        <form id="leadMagnetForm" class="template-page__form" data-api={apiUrl} data-fallback={directDownloadUrl}>
+          <div class="template-page__form-row">
+            <input
+              type="text"
+              name="firstName"
+              placeholder="First name (optional)"
+              autocomplete="given-name"
+              class="template-page__input"
+              maxlength="60"
+            />
+            <input
+              type="email"
+              name="email"
+              placeholder="your@email.com"
+              autocomplete="email"
+              required
+              class="template-page__input"
+              maxlength="254"
+            />
+          </div>
+          <!-- Honeypot. Hidden from humans, bots fill it in. -->
+          <div aria-hidden="true" class="template-page__hp">
+            <label>Website (leave blank)<input type="text" name="website" tabindex="-1" autocomplete="off" /></label>
+          </div>
+          <button type="submit" class="btn btn--accent btn--lg template-page__submit">Send me the template</button>
+          <p class="template-page__form-status" id="formStatus" role="status" aria-live="polite"></p>
+        </form>
+
+        <p class="template-page__finer">
+          One email when you sign up. We'll never share your address.
+          Or <a href={directDownloadUrl} download>download the .xlsx directly</a> if you prefer to skip email.
+        </p>
+      </section>
+
+      <section class="template-page__preview">
+        <h2 class="display">What's inside</h2>
+
+        <div class="template-page__sheet-card">
+          <div class="template-page__sheet-icon">📋</div>
+          <div class="template-page__sheet-body">
+            <h3>Instructions</h3>
+            <p>A 6-step walkthrough that tells you what to do on day one. Built for someone who's never used a spreadsheet template before.</p>
+          </div>
+        </div>
+
+        <div class="template-page__sheet-card">
+          <div class="template-page__sheet-icon">📦</div>
+          <div class="template-page__sheet-body">
+            <h3>Inventory</h3>
+            <p>The master list. One row per item. Item IDs auto-generate as CS-001, CS-002, etc. Dropdowns keep category, team, and status entries consistent. Status column highlights green for in-storage, amber for out, red for lost.</p>
+          </div>
+        </div>
+
+        <div class="template-page__sheet-card">
+          <div class="template-page__sheet-icon">📒</div>
+          <div class="template-page__sheet-body">
+            <h3>Loans Log</h3>
+            <p>Every check-out and check-in. Item name auto-fills from the Item ID. Days overdue calculates automatically. Returned rows turn green, overdue rows turn red, so you can see at a glance who still has what.</p>
+          </div>
+        </div>
+
+        <div class="template-page__sheet-card">
+          <div class="template-page__sheet-icon">📊</div>
+          <div class="template-page__sheet-body">
+            <h3>Annual Audit</h3>
+            <p>The committee report. Big-number summary at the top: total items, in storage, out, lost, need replacing. Full breakdown by category and by team. Updates automatically from the Inventory sheet. Save as PDF for grant applications.</p>
+          </div>
+        </div>
+
+        <div class="template-page__sheet-card">
+          <div class="template-page__sheet-icon">⚙️</div>
+          <div class="template-page__sheet-body">
+            <h3>Setup</h3>
+            <p>The dropdown lists for categories, teams, conditions, and statuses. Edit these to match your club. Defaults work for most grassroots setups.</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="template-page__honest">
+        <h2 class="display">An honest note on spreadsheets</h2>
+        <p>This template is genuinely useful. It will get a single team or a small club through a season. But spreadsheets have limits, and you'll hit them faster than you think.</p>
+        <p>The moment your club has more than one team, more than 30 items, or more than one person doing check-outs, the spreadsheet model breaks down. You can't scan a QR code from your phone in a kit cupboard. You can't get an automatic WhatsApp reminder when something is overdue. You can't generate a grant-ready audit PDF in one click.</p>
+        <p>That's what ClubShed does. Free for one team and 30 items. €15.99 a month when you outgrow that. No card required to start.</p>
+        <a href="https://app.clubshed.pro/signup" class="btn btn--ghost">Try ClubShed free</a>
+      </section>
+
+      <section class="template-page__related">
+        <h3>Related reading</h3>
+        <ul>
+          <li><a href="/blog/end-of-season-equipment-audit/">How to run an end-of-season equipment audit</a></li>
+          <li><a href="/blog/grassroots-football-equipment-guide/">The grassroots equipment management guide</a></li>
+          <li><a href="/compare/spond/">ClubShed vs Spond for equipment tracking</a></li>
+        </ul>
+      </section>
+
+    </div>
+  </article>
+</BaseLayout>
+
+<script is:inline>
+  (function () {
+    const form = document.getElementById('leadMagnetForm');
+    if (!form) return;
+
+    const status = document.getElementById('formStatus');
+    const submit = form.querySelector('button[type="submit"]');
+    const apiUrl = form.dataset.api;
+    const fallbackUrl = form.dataset.fallback;
+
+    function setStatus(msg, kind) {
+      status.textContent = msg;
+      status.dataset.kind = kind || '';
+    }
+
+    form.addEventListener('submit', async (e) => {
+      e.preventDefault();
+      const formData = new FormData(form);
+      const payload = {
+        email: (formData.get('email') || '').trim(),
+        firstName: (formData.get('firstName') || '').trim(),
+        website: formData.get('website') || '',
+      };
+
+      setStatus('Sending...', 'pending');
+      submit.disabled = true;
+
+      try {
+        const res = await fetch(apiUrl, {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(payload),
+        });
+        const data = await res.json().catch(() => ({}));
+
+        if (res.ok) {
+          setStatus('Sent. Check your inbox in a minute, and your spam folder if it does not appear.', 'success');
+          form.reset();
+        } else {
+          const errMsg = data.error || 'Something went wrong. Try the direct download below.';
+          setStatus(errMsg, 'error');
+        }
+      } catch (err) {
+        // Network failure: surface the direct download as the safe fallback
+        setStatus(
+          'Could not reach the server. Use the direct download link below, or email hello@clubshed.pro.',
+          'error'
+        );
+      } finally {
+        submit.disabled = false;
+      }
+    });
+  })();
+</script>
+
+<style>
+  .template-page {
+    padding: clamp(3rem, 6vw, 5rem) 0 clamp(4rem, 8vw, 6rem);
+  }
+  .template-page .container {
+    max-width: 760px;
+  }
+  .template-page__header {
+    margin-bottom: 2.5rem;
+  }
+  .template-page__header .tag {
+    margin-bottom: 1.5rem;
+  }
+  .template-page__header h1 {
+    font-size: clamp(2.25rem, 5vw, 3.75rem);
+    margin-bottom: 1.5rem;
+  }
+  .template-page__lede {
+    font-size: clamp(1.05rem, 1.4vw, 1.2rem);
+    color: var(--muted);
+    line-height: 1.55;
+    max-width: 60ch;
+  }
+  .template-page__form-section {
+    margin-bottom: 3rem;
+    padding: 2.5rem 2rem;
+    background: var(--pitch-deep);
+    color: var(--chalk);
+    border-radius: var(--radius);
+  }
+  .template-page__form-section h2 {
+    margin-bottom: 0.75rem;
+    color: var(--chalk);
+    text-align: center;
+  }
+  .template-page__form-lede {
+    text-align: center;
+    margin: 0 auto 1.5rem;
+    max-width: 50ch;
+    opacity: 0.85;
+  }
+  .template-page__form {
+    max-width: 520px;
+    margin: 0 auto;
+  }
+  .template-page__form-row {
+    display: grid;
+    grid-template-columns: 1fr 1.4fr;
+    gap: 0.75rem;
+    margin-bottom: 0.75rem;
+  }
+  @media (max-width: 520px) {
+    .template-page__form-row {
+      grid-template-columns: 1fr;
+    }
+  }
+  .template-page__input {
+    width: 100%;
+    padding: 0.85rem 1rem;
+    border: 2px solid var(--chalk);
+    background: var(--chalk);
+    color: var(--asphalt);
+    border-radius: var(--radius-sm);
+    font-family: var(--font-body);
+    font-size: 1rem;
+    box-sizing: border-box;
+  }
+  .template-page__input::placeholder {
+    color: var(--muted);
+  }
+  .template-page__input:focus {
+    outline: 3px solid var(--kit-orange);
+    outline-offset: 2px;
+  }
+  .template-page__hp {
+    position: absolute;
+    left: -9999px;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+  }
+  .template-page__submit {
+    width: 100%;
+    margin-top: 0.25rem;
+  }
+  .template-page__form-status {
+    text-align: center;
+    margin-top: 1rem;
+    min-height: 1.5rem;
+    font-size: 0.95rem;
+  }
+  .template-page__form-status[data-kind="error"] {
+    color: #ffd6cc;
+  }
+  .template-page__form-status[data-kind="success"] {
+    color: #c8e2d0;
+  }
+  .template-page__form-status[data-kind="pending"] {
+    color: var(--chalk);
+    opacity: 0.7;
+  }
+  .template-page__finer {
+    font-family: var(--font-mono);
+    font-size: 0.78rem;
+    text-align: center;
+    margin: 1.25rem auto 0 !important;
+    max-width: 50ch;
+    color: var(--muted);
+  }
+  .template-page__finer a {
+    color: var(--kit-orange);
+    text-decoration: underline;
+  }
+  .template-page__preview {
+    margin-bottom: 3rem;
+  }
+  .template-page__preview h2 {
+    margin-bottom: 1.5rem;
+    font-size: clamp(1.6rem, 3vw, 2.25rem);
+  }
+  .template-page__sheet-card {
+    display: flex;
+    gap: 1.25rem;
+    align-items: flex-start;
+    background: var(--chalk-warm);
+    border: 2px solid var(--asphalt);
+    border-radius: var(--radius);
+    padding: 1.5rem;
+    margin-bottom: 1rem;
+  }
+  .template-page__sheet-icon {
+    font-size: 1.75rem;
+    flex-shrink: 0;
+    width: 48px;
+    height: 48px;
+    display: grid;
+    place-items: center;
+    background: var(--chalk);
+    border: 2px solid var(--asphalt);
+    border-radius: var(--radius-sm);
+  }
+  .template-page__sheet-body {
+    flex: 1;
+    min-width: 0;
+  }
+  .template-page__sheet-body h3 {
+    font-family: var(--font-display);
+    font-size: 1.25rem;
+    margin-bottom: 0.5rem;
+    letter-spacing: 0.01em;
+  }
+  .template-page__sheet-body p {
+    margin: 0;
+    line-height: 1.55;
+    color: var(--asphalt);
+  }
+  .template-page__honest {
+    margin-bottom: 3rem;
+  }
+  .template-page__honest h2 {
+    margin-bottom: 1rem;
+    font-size: 1.75rem;
+  }
+  .template-page__honest p {
+    margin-bottom: 1rem;
+    line-height: 1.6;
+    max-width: 66ch;
+  }
+  .template-page__related {
+    border-top: 1px solid var(--line);
+    padding-top: 2rem;
+  }
+  .template-page__related h3 {
+    font-family: var(--font-display);
+    font-size: 1.2rem;
+    margin-bottom: 1rem;
+  }
+  .template-page__related ul {
+    list-style: none;
+    padding: 0;
+  }
+  .template-page__related li {
+    margin-bottom: 0.5rem;
+  }
+  .template-page__related a {
+    color: var(--kit-orange);
+    text-decoration: underline;
+    text-underline-offset: 3px;
+  }
+</style>

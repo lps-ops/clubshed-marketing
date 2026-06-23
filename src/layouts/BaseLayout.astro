@@ -1,0 +1,426 @@
+---
+import '../styles/global.css';
+
+interface Props {
+  title: string;
+  description: string;
+  canonical?: string;
+  ogImage?: string;
+  type?: 'website' | 'article';
+  publishDate?: string;
+  updateDate?: string;
+  author?: string;
+  noindex?: boolean;
+}
+
+const {
+  title,
+  description,
+  canonical,
+  ogImage = '/og-default.png',
+  type = 'website',
+  publishDate,
+  updateDate,
+  author = 'Lucas Seewald',
+  noindex = false,
+} = Astro.props;
+
+const siteUrl = 'https://clubshed.pro';
+const canonicalUrl = canonical || `${siteUrl}${Astro.url.pathname}`;
+const fullOgImage = ogImage.startsWith('http') ? ogImage : `${siteUrl}${ogImage}`;
+
+// JSON-LD: SoftwareApplication on every page, Article on blog posts
+const orgSchema = {
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "ClubShed",
+  "url": siteUrl,
+  "logo": `${siteUrl}/logo-mark-512.png`,
+  "description": "Football equipment tracker for grassroots clubs.",
+  "sameAs": [],
+};
+
+const softwareSchema = {
+  "@context": "https://schema.org",
+  "@type": "SoftwareApplication",
+  "name": "ClubShed",
+  "applicationCategory": "BusinessApplication",
+  "operatingSystem": "Web, iOS, Android",
+  "description": "ClubShed is the equipment tracker built for grassroots football clubs. Track balls, bibs, cones, and kit. Stop losing gear.",
+  "offers": [
+    {
+      "@type": "Offer",
+      "name": "Free",
+      "price": "0",
+      "priceCurrency": "EUR",
+    },
+    {
+      "@type": "Offer",
+      "name": "Club",
+      "price": "20",
+      "priceCurrency": "EUR",
+      "priceSpecification": {
+        "@type": "UnitPriceSpecification",
+        "price": "20",
+        "priceCurrency": "EUR",
+        "billingDuration": "P1M",
+      },
+    },
+  ],
+  "url": siteUrl,
+};
+
+const articleSchema = type === 'article' && publishDate ? {
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": title,
+  "description": description,
+  "image": fullOgImage,
+  "author": {
+    "@type": "Person",
+    "name": author,
+    "url": `${siteUrl}/about`,
+    "jobTitle": "Co-founder of HVV Football Factory, builder of ClubShed",
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "ClubShed",
+    "logo": {
+      "@type": "ImageObject",
+      "url": `${siteUrl}/logo-mark-512.png`,
+    },
+  },
+  "datePublished": publishDate,
+  "dateModified": updateDate || publishDate,
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": canonicalUrl,
+  },
+} : null;
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="generator" content={Astro.generator} />
+
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    <link rel="canonical" href={canonicalUrl} />
+    {noindex && <meta name="robots" content="noindex, nofollow" />}
+
+    <!-- Open Graph -->
+    <meta property="og:type" content={type} />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:url" content={canonicalUrl} />
+    <meta property="og:image" content={fullOgImage} />
+    <meta property="og:site_name" content="ClubShed" />
+    <meta property="og:locale" content="en_GB" />
+    {publishDate && <meta property="article:published_time" content={publishDate} />}
+    {updateDate && <meta property="article:modified_time" content={updateDate} />}
+    {type === 'article' && <meta property="article:author" content={author} />}
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={fullOgImage} />
+
+    <!-- Favicons -->
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+
+    <!-- Preconnect -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+    <!-- Schema.org: Organization -->
+    <script type="application/ld+json" set:html={JSON.stringify(orgSchema)} />
+
+    <!-- Schema.org: SoftwareApplication -->
+    <script type="application/ld+json" set:html={JSON.stringify(softwareSchema)} />
+
+    {articleSchema && (
+      <script type="application/ld+json" set:html={JSON.stringify(articleSchema)} />
+    )}
+  </head>
+  <body>
+    <a href="#main" class="skip-link">Skip to content</a>
+
+    <header class="site-header">
+      <div class="container site-header__inner">
+        <a href="/" class="logo" aria-label="ClubShed home">
+          <img src="/favicon.svg" alt="" class="logo__mark" width="36" height="36" />
+          <span class="logo__text">ClubShed</span>
+        </a>
+        <nav class="site-nav" aria-label="Primary">
+          <a href="/#features">Features</a>
+          <a href="/pricing/">Pricing</a>
+          <a href="/blog/">Blog</a>
+          <a href="https://app.clubshed.pro/login" class="nav-login">Sign in</a>
+          <a href="https://app.clubshed.pro/signup" class="btn btn--accent">Start free</a>
+        </nav>
+      </div>
+    </header>
+
+    <main id="main">
+      <slot />
+    </main>
+
+    <footer class="site-footer">
+      <div class="container">
+        <div class="site-footer__grid">
+          <div class="site-footer__brand">
+            <img src="/logo-mark-dark.svg" alt="" class="logo__mark logo__mark--lg" width="56" height="56" />
+            <p class="site-footer__tagline">Built for the people running grassroots football clubs.</p>
+          </div>
+          <div class="site-footer__col">
+            <h4>Product</h4>
+            <a href="/#features">Features</a>
+            <a href="/pricing/">Pricing</a>
+            <a href="https://app.clubshed.pro/signup">Start free</a>
+          </div>
+          <div class="site-footer__col">
+            <h4>Resources</h4>
+            <a href="/blog/">Blog</a>
+            <a href="/templates/inventory-spreadsheet/">Free template</a>
+            <a href="/compare/spond/">vs Spond</a>
+          </div>
+          <div class="site-footer__col">
+            <h4>Company</h4>
+            <a href="/about/">About</a>
+            <a href="/contact/">Contact</a>
+            <a href="/privacy/">Privacy</a>
+          </div>
+        </div>
+        <div class="site-footer__trust">
+          <div class="site-footer__trust-item">
+            <svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+            <span>Built and hosted in Europe</span>
+          </div>
+          <div class="site-footer__trust-item">
+            <svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="m9 12 2 2 4-4"/></svg>
+            <span>GDPR compliant by default</span>
+          </div>
+          <div class="site-footer__trust-item">
+            <svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3h18v18H3z"/><path d="M8 12h8M12 8v8"/></svg>
+            <span>No tracking, no ads, no data resale</span>
+          </div>
+          <div class="site-footer__trust-item">
+            <svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+            <span>Export your data anytime</span>
+          </div>
+        </div>
+        <div class="site-footer__base">
+          <span>&copy; {new Date().getFullYear()} ClubShed</span>
+          <span class="site-footer__signature">Made by people who lost too many footballs.</span>
+        </div>
+      </div>
+    </footer>
+
+    <style>
+      .skip-link {
+        position: absolute;
+        top: -40px;
+        left: 0;
+        background: var(--asphalt);
+        color: var(--chalk);
+        padding: 0.5rem 1rem;
+        z-index: 100;
+      }
+      .skip-link:focus { top: 0; }
+
+      .site-header {
+        position: sticky;
+        top: 0;
+        z-index: 50;
+        background: rgba(244, 241, 234, 0.85);
+        backdrop-filter: blur(12px);
+        border-bottom: 1px solid var(--line);
+      }
+
+      .site-header__inner {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        height: 72px;
+      }
+
+      .logo {
+        display: flex;
+        align-items: center;
+        gap: 0.7rem;
+        font-family: var(--font-display);
+        font-size: 1.4rem;
+        letter-spacing: 0.02em;
+        color: var(--asphalt);
+      }
+
+      .logo__mark {
+        width: 40px;
+        height: 40px;
+        display: block;
+        flex-shrink: 0;
+      }
+
+      .logo__mark--lg {
+        width: 64px;
+        height: 64px;
+      }
+
+      .logo__text {
+        text-transform: uppercase;
+      }
+
+      .site-nav {
+        display: flex;
+        align-items: center;
+        gap: 1.75rem;
+      }
+
+      .site-nav a {
+        font-size: 0.92rem;
+        font-weight: 500;
+        color: var(--asphalt);
+        transition: color 0.15s ease;
+      }
+
+      .site-nav a:hover {
+        color: var(--kit-orange);
+      }
+
+      .site-nav a.btn {
+        color: var(--chalk);
+      }
+
+      .nav-login {
+        opacity: 0.8;
+      }
+
+      @media (max-width: 720px) {
+        .site-nav a:not(.btn):not(.nav-login) {
+          display: none;
+        }
+      }
+
+      .site-footer {
+        background: var(--pitch-deep);
+        color: var(--chalk);
+        padding: 4rem 0 2rem;
+        margin-top: 6rem;
+        position: relative;
+      }
+
+      .site-footer::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        height: 4px;
+        background: repeating-linear-gradient(
+          90deg,
+          var(--kit-orange) 0,
+          var(--kit-orange) 12px,
+          var(--chalk) 12px,
+          var(--chalk) 24px
+        );
+      }
+
+      .site-footer__grid {
+        display: grid;
+        grid-template-columns: 1.5fr 1fr 1fr 1fr;
+        gap: 3rem;
+        padding-bottom: 3rem;
+        border-bottom: 1px solid rgba(244, 241, 234, 0.15);
+      }
+
+      @media (max-width: 720px) {
+        .site-footer__grid {
+          grid-template-columns: 1fr 1fr;
+        }
+      }
+
+      .site-footer__brand .logo__mark {
+        margin-bottom: 1rem;
+      }
+
+      .site-footer__tagline {
+        font-size: 0.95rem;
+        opacity: 0.75;
+        max-width: 28ch;
+      }
+
+      .site-footer__col h4 {
+        font-family: var(--font-display);
+        font-size: 1rem;
+        margin-bottom: 1rem;
+        opacity: 0.6;
+        letter-spacing: 0.08em;
+      }
+
+      .site-footer__col a {
+        display: block;
+        font-size: 0.92rem;
+        margin-bottom: 0.5rem;
+        opacity: 0.85;
+        transition: opacity 0.15s ease, color 0.15s ease;
+      }
+
+      .site-footer__col a:hover {
+        opacity: 1;
+        color: var(--kit-orange-soft);
+      }
+
+      .site-footer__trust {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 1.25rem 2rem;
+        padding: 1.75rem 0;
+        margin-top: 1rem;
+        border-top: 1px solid rgba(244, 241, 234, 0.12);
+        border-bottom: 1px solid rgba(244, 241, 234, 0.12);
+      }
+
+      .site-footer__trust-item {
+        display: flex;
+        align-items: center;
+        gap: 0.55rem;
+        font-family: var(--font-mono);
+        font-size: 0.74rem;
+        text-transform: uppercase;
+        letter-spacing: 0.08em;
+        opacity: 0.72;
+        color: var(--chalk);
+      }
+
+      .site-footer__trust-item svg {
+        color: var(--kit-orange-soft);
+        flex-shrink: 0;
+      }
+
+      .site-footer__base {
+        padding-top: 1.5rem;
+        display: flex;
+        justify-content: space-between;
+        font-size: 0.82rem;
+        opacity: 0.6;
+        font-family: var(--font-mono);
+      }
+
+      .site-footer__signature {
+        font-style: italic;
+      }
+
+      @media (max-width: 640px) {
+        .site-footer__base {
+          flex-direction: column;
+          gap: 0.5rem;
+        }
+      }
+    </style>
+  </body>
+</html>
