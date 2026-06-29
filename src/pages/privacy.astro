@@ -1,0 +1,171 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+
+const title = 'Privacy Policy | ClubShed';
+const description = 'How ClubShed handles your data. Plain language, no dark patterns. Marketing site collects nothing. App collects only what is needed to run your account.';
+const lastUpdated = '2026-05-21';
+---
+
+<BaseLayout title={title} description={description}>
+  <article class="legal-page">
+    <div class="container">
+
+      <header class="legal-page__header">
+        <span class="tag">Legal</span>
+        <h1 class="display">Privacy Policy</h1>
+        <p class="legal-page__updated">Last updated: 21 May 2026</p>
+      </header>
+
+      <section class="legal-page__section">
+        <h2>The short version</h2>
+        <p>The ClubShed marketing site (clubshed.pro) doesn't collect any personal data, doesn't use cookies for tracking, and doesn't run analytics that track you across sites.</p>
+        <p>The ClubShed app (app.clubshed.pro) collects the minimum needed to run your account: your email address, your club details, your equipment list. We don't sell, share, or rent data to third parties.</p>
+        <p>You can delete your account and all associated data at any time.</p>
+      </section>
+
+      <section class="legal-page__section">
+        <h2>Who we are</h2>
+        <p>ClubShed is operated by Lucas Seewald. Contact: <a href="mailto:hello@clubshed.pro">hello@clubshed.pro</a>.</p>
+      </section>
+
+      <section class="legal-page__section">
+        <h2>What the marketing site collects</h2>
+        <p>The marketing site at clubshed.pro is a static site hosted on Cloudflare Pages.</p>
+        <ul>
+          <li><strong>Server logs.</strong> Cloudflare keeps standard server logs (IP address, browser, referrer, page requested) for security and performance. These are retained per Cloudflare's policies and not used for advertising or tracking.</li>
+          <li><strong>No analytics tracking.</strong> The marketing site doesn't run Google Analytics, Facebook Pixel, or any third-party trackers.</li>
+          <li><strong>No cookies.</strong> No cookies are set by the marketing site itself.</li>
+        </ul>
+      </section>
+
+      <section class="legal-page__section">
+        <h2>What the app collects</h2>
+        <p>The ClubShed app at app.clubshed.pro is where personal data is processed. To run your account, we collect:</p>
+        <ul>
+          <li><strong>Account information.</strong> Email address, name, password (hashed), club name.</li>
+          <li><strong>Club data.</strong> Equipment list, team names, coach names, allocation history, audit logs.</li>
+          <li><strong>Payment information.</strong> If you upgrade to a paid plan, payment processing is handled by Stripe. ClubShed does not store credit card numbers. We store your Stripe customer ID and subscription status.</li>
+          <li><strong>Usage data.</strong> Basic logs of when you sign in and what actions you take, for security and debugging.</li>
+        </ul>
+      </section>
+
+      <section class="legal-page__section">
+        <h2>How we use your data</h2>
+        <p>Only for these purposes:</p>
+        <ul>
+          <li>To run your account and provide the service</li>
+          <li>To send transactional emails (welcome, password reset, billing receipts, overdue equipment reminders)</li>
+          <li>To debug issues if you ask for help</li>
+          <li>To comply with legal obligations</li>
+        </ul>
+        <p>We do not sell, rent, or share your data with advertisers, data brokers, or anyone else.</p>
+      </section>
+
+      <section class="legal-page__section">
+        <h2>Third parties that process data on our behalf</h2>
+        <ul>
+          <li><strong>Cloudflare</strong> for hosting and DNS</li>
+          <li><strong>Lovable / Supabase</strong> for the app database and authentication</li>
+          <li><strong>Stripe</strong> for payment processing (only if you upgrade to a paid plan)</li>
+          <li><strong>Resend</strong> for transactional emails</li>
+        </ul>
+        <p>Each of these is GDPR-compliant. We have data processing agreements in place where required.</p>
+      </section>
+
+      <section class="legal-page__section">
+        <h2>Your rights under GDPR</h2>
+        <p>If you're in the EU, UK, or EEA, you have the right to:</p>
+        <ul>
+          <li>Access the data we hold about you</li>
+          <li>Correct inaccurate data</li>
+          <li>Delete your account and all associated data</li>
+          <li>Export your data in a portable format</li>
+          <li>Object to processing</li>
+          <li>Withdraw consent</li>
+          <li>Lodge a complaint with a supervisory authority</li>
+        </ul>
+        <p>To exercise any of these, email <a href="mailto:hello@clubshed.pro">hello@clubshed.pro</a>. We'll respond within 30 days.</p>
+      </section>
+
+      <section class="legal-page__section">
+        <h2>Data retention</h2>
+        <p>We keep your account data for as long as your account is active. If you delete your account, we delete all associated personal data within 30 days, except where we're legally required to keep certain records (for example, financial records for tax purposes).</p>
+      </section>
+
+      <section class="legal-page__section">
+        <h2>Children's data</h2>
+        <p>ClubShed is designed for adult club administrators (volunteers, secretaries, kit managers). We don't knowingly collect data from anyone under 16. If you become aware that a child has provided us with personal information, please contact us and we'll delete it.</p>
+        <p>Note that the equipment tracking feature involves recording who has what kit, which can include youth player names entered by club administrators. The legal basis for processing this data is legitimate interest in running the club's operations, with the data controller being the club itself, not ClubShed.</p>
+      </section>
+
+      <section class="legal-page__section">
+        <h2>Changes to this policy</h2>
+        <p>If we make material changes to this policy, we'll notify account holders by email before the changes take effect. Minor changes (clarifications, typo fixes) will just have an updated date at the top of this page.</p>
+      </section>
+
+      <section class="legal-page__section">
+        <h2>Contact</h2>
+        <p>Questions about this policy or how we handle data? Email <a href="mailto:hello@clubshed.pro">hello@clubshed.pro</a>.</p>
+      </section>
+
+    </div>
+  </article>
+</BaseLayout>
+
+<style>
+  .legal-page {
+    padding: clamp(3rem, 6vw, 5rem) 0 clamp(4rem, 8vw, 6rem);
+  }
+  .legal-page .container {
+    max-width: 720px;
+  }
+  .legal-page__header {
+    margin-bottom: 3rem;
+    padding-bottom: 2rem;
+    border-bottom: 1px solid var(--line);
+  }
+  .legal-page__header .tag {
+    margin-bottom: 1.5rem;
+  }
+  .legal-page__header h1 {
+    font-size: clamp(2.25rem, 5vw, 3.5rem);
+    margin-bottom: 0.75rem;
+  }
+  .legal-page__updated {
+    font-family: var(--font-mono);
+    font-size: 0.85rem;
+    color: var(--muted);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+  }
+  .legal-page__section {
+    margin-bottom: 2.5rem;
+  }
+  .legal-page__section h2 {
+    font-family: var(--font-display);
+    font-size: 1.4rem;
+    margin-bottom: 1rem;
+    letter-spacing: 0.02em;
+  }
+  .legal-page__section p {
+    margin-bottom: 1rem;
+    line-height: 1.65;
+    max-width: 66ch;
+  }
+  .legal-page__section ul {
+    margin: 0 0 1rem 1.25rem;
+    max-width: 66ch;
+  }
+  .legal-page__section li {
+    margin-bottom: 0.5rem;
+    line-height: 1.55;
+  }
+  .legal-page__section strong {
+    font-weight: 600;
+  }
+  .legal-page__section a {
+    color: var(--kit-orange);
+    text-decoration: underline;
+    text-underline-offset: 3px;
+  }
+</style>

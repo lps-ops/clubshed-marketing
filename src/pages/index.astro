@@ -1,0 +1,2087 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+
+const title = 'ClubShed | Football Equipment Tracker for Grassroots Clubs';
+const description = 'Stop losing footballs, bibs, and kit. Track equipment, allocate to teams, generate grant audit reports. Free for one team.';
+
+const kitItems = [
+  '⚽ Match Ball #024',
+  '🦺 Bibs Set Orange',
+  '🔶 Cones (20)',
+  '🧤 GK Gloves L',
+  '👕 U14 Match Kit',
+  '🎒 Training Bag #07',
+  '⚽ Training Ball #112',
+  '🩹 First Aid Kit',
+  '📣 Whistle',
+  '🅿️ Pump',
+];
+---
+
+<BaseLayout title={title} description={description}>
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero__bg" aria-hidden="true">
+      <div class="hero__grid-overlay"></div>
+    </div>
+
+    <div class="container hero__inner">
+      <div class="hero__copy">
+        <span class="tag rise rise-1">
+          <span class="tag__dot"></span>
+          Made for grassroots football
+        </span>
+        <h1 class="display hero__h1 rise rise-2">
+          <span class="hero__line">Stop losing</span>
+          <span class="hero__line">your <span class="hero__accent">footballs.</span></span>
+        </h1>
+        <p class="hero__lede rise rise-3">
+          ClubShed is the equipment tracker built for the volunteer running your club out of a kit cupboard. Know what you own, who has it, and when it should come back.
+        </p>
+        <div class="hero__cta rise rise-4">
+          <a href="https://app.clubshed.pro/signup" class="btn btn--accent btn--lg">
+            Start free
+            <span class="btn__arrow">→</span>
+          </a>
+          <a href="#preview" class="btn btn--ghost btn--lg">See it in action</a>
+        </div>
+        <div class="hero__trust rise rise-5">
+          <div class="hero__trust-item">
+            <span class="check">+</span>
+            <span>Free forever for one team</span>
+          </div>
+          <div class="hero__trust-item">
+            <span class="check">+</span>
+            <span>No card required</span>
+          </div>
+          <div class="hero__trust-item">
+            <span class="check">+</span>
+            <span>5-minute setup</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="hero__visual rise rise-3" aria-hidden="true">
+        <div class="scoreboard">
+          <div class="scoreboard__head">
+            <div class="scoreboard__indicator">
+              <span class="scoreboard__pulse"></span>
+              LIVE
+            </div>
+            <div class="scoreboard__title">Kit Cupboard</div>
+            <div class="scoreboard__date">Today</div>
+          </div>
+          <div class="scoreboard__body">
+            <div class="ticker-row ticker-row--out">
+              <div class="ticker-row__icon">⚽</div>
+              <div class="ticker-row__main">
+                <div class="ticker-row__label">Match Ball #024</div>
+                <div class="ticker-row__sub">Out · Coach Marco · U14</div>
+              </div>
+              <div class="ticker-row__status">OUT</div>
+            </div>
+            <div class="ticker-row ticker-row--in">
+              <div class="ticker-row__icon">🦺</div>
+              <div class="ticker-row__main">
+                <div class="ticker-row__label">Bibs Set Orange</div>
+                <div class="ticker-row__sub">In storage · Cupboard 1</div>
+              </div>
+              <div class="ticker-row__status">IN</div>
+            </div>
+            <div class="ticker-row ticker-row--late">
+              <div class="ticker-row__icon">🔶</div>
+              <div class="ticker-row__main">
+                <div class="ticker-row__label">Cones (20)</div>
+                <div class="ticker-row__sub">3 days overdue · Coach Sara</div>
+              </div>
+              <div class="ticker-row__status">LATE</div>
+            </div>
+            <div class="ticker-row ticker-row--in">
+              <div class="ticker-row__icon">🧤</div>
+              <div class="ticker-row__main">
+                <div class="ticker-row__label">GK Gloves Size L</div>
+                <div class="ticker-row__sub">In storage · U16 bag</div>
+              </div>
+              <div class="ticker-row__status">IN</div>
+            </div>
+          </div>
+          <div class="scoreboard__foot">
+            <div class="scoreboard__stat">
+              <span class="scoreboard__stat-num">47</span>
+              <span class="scoreboard__stat-label">In</span>
+            </div>
+            <div class="scoreboard__stat">
+              <span class="scoreboard__stat-num">12</span>
+              <span class="scoreboard__stat-label">Out</span>
+            </div>
+            <div class="scoreboard__stat scoreboard__stat--alert">
+              <span class="scoreboard__stat-num">2</span>
+              <span class="scoreboard__stat-label">Late</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="floating-card floating-card--qr">
+          <div class="floating-card__qr">
+            <svg viewBox="0 0 21 21" xmlns="http://www.w3.org/2000/svg">
+              <rect width="21" height="21" fill="#1a2e1f"/>
+              <g fill="#f4f1ea">
+                <rect x="1" y="1" width="7" height="7"/>
+                <rect x="13" y="1" width="7" height="7"/>
+                <rect x="1" y="13" width="7" height="7"/>
+                <rect x="3" y="3" width="3" height="3" fill="#1a2e1f"/>
+                <rect x="15" y="3" width="3" height="3" fill="#1a2e1f"/>
+                <rect x="3" y="15" width="3" height="3" fill="#1a2e1f"/>
+                <rect x="10" y="2" width="1" height="1"/>
+                <rect x="10" y="4" width="1" height="1"/>
+                <rect x="10" y="6" width="1" height="1"/>
+                <rect x="11" y="3" width="1" height="1"/>
+                <rect x="11" y="5" width="1" height="1"/>
+                <rect x="10" y="10" width="1" height="1"/>
+                <rect x="12" y="10" width="1" height="1"/>
+                <rect x="14" y="10" width="1" height="1"/>
+                <rect x="16" y="10" width="1" height="1"/>
+                <rect x="18" y="10" width="1" height="1"/>
+                <rect x="11" y="12" width="1" height="1"/>
+                <rect x="13" y="12" width="1" height="1"/>
+                <rect x="15" y="12" width="1" height="1"/>
+                <rect x="17" y="12" width="1" height="1"/>
+                <rect x="10" y="14" width="1" height="1"/>
+                <rect x="14" y="14" width="1" height="1"/>
+                <rect x="18" y="14" width="1" height="1"/>
+                <rect x="12" y="16" width="1" height="1"/>
+                <rect x="16" y="16" width="1" height="1"/>
+                <rect x="10" y="18" width="1" height="1"/>
+                <rect x="14" y="18" width="1" height="1"/>
+                <rect x="18" y="18" width="1" height="1"/>
+              </g>
+            </svg>
+          </div>
+          <div class="floating-card__id">CS-024</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="marquee" aria-hidden="true">
+      <div class="marquee__track">
+        {[...kitItems, ...kitItems].map((item) => (
+          <span class="marquee__item">
+            {item}
+            <span class="marquee__sep">/</span>
+          </span>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- PRODUCT PREVIEW -->
+  <section id="preview" class="preview reveal">
+    <div class="container">
+      <div class="preview__header">
+        <span class="tag">The product</span>
+        <h2 class="display">An inventory that fits in your hand,<br />not in a binder.</h2>
+        <p class="preview__lede">Built mobile-first because the kit cupboard isn't where laptops live. Coaches check gear in and out in two taps. You see the whole club from your phone.</p>
+      </div>
+
+      <div class="preview__phone-wrap">
+        <div class="callout callout--1">
+          <div class="callout__num">01</div>
+          <h3>Scan, don't search</h3>
+          <p>Print a QR sticker for every bag and bin. Scan with your phone. Check in or out in seconds.</p>
+        </div>
+
+        <div class="preview__phone">
+          <div class="preview__phone-notch"></div>
+          <div class="preview__phone-screen">
+            <img
+              src="/screenshot_item_qr.png"
+              alt="ClubShed app: a football item card showing condition, location, team allocation, a Check out button, and a QR sticker code"
+              class="preview__phone-img"
+              width="600"
+              height="1022"
+              loading="lazy"
+            />
+          </div>
+        </div>
+
+        <div class="preview__callouts-right">
+          <div class="callout callout--2">
+            <div class="callout__num">02</div>
+            <h3>Know who has what</h3>
+            <p>Every coach, every team, every item. Tap a name to see what they're holding.</p>
+          </div>
+          <div class="callout callout--3">
+            <div class="callout__num">03</div>
+            <h3>Catch the leaks</h3>
+            <p>Email reminders go out automatically when gear is overdue. No more polite WhatsApp begging.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROBLEM -->
+  <section class="problem reveal">
+    <div class="container">
+      <div class="problem__header">
+        <span class="tag tag--filled">The honest truth</span>
+        <h2 class="display">If your kit man retired tomorrow,<br />would anyone know where anything is?</h2>
+      </div>
+
+      <div class="scoreboard-stats">
+        <div class="scoreboard-stats__row">
+          <div class="scoreboard-stats__label">Avg replacement cost per season</div>
+          <div class="scoreboard-stats__num">€1,000</div>
+          <div class="scoreboard-stats__bar">
+            <span style="width: 70%;"></span>
+          </div>
+        </div>
+        <div class="scoreboard-stats__row">
+          <div class="scoreboard-stats__label">Clubs running on a spreadsheet, or nothing</div>
+          <div class="scoreboard-stats__num">6 / 10</div>
+          <div class="scoreboard-stats__bar">
+            <span style="width: 60%;"></span>
+          </div>
+        </div>
+        <div class="scoreboard-stats__row">
+          <div class="scoreboard-stats__label">Clubs seeing equipment costs rise this year</div>
+          <div class="scoreboard-stats__num">87%</div>
+          <div class="scoreboard-stats__bar">
+            <span style="width: 87%;"></span>
+          </div>
+        </div>
+        <div class="scoreboard-stats__row">
+          <div class="scoreboard-stats__label">Footballs the average club replaces per season</div>
+          <div class="scoreboard-stats__num">18</div>
+          <div class="scoreboard-stats__bar">
+            <span style="width: 45%;"></span>
+          </div>
+        </div>
+      </div>
+
+      <div class="problem__quote">
+        <div class="problem__quote-mark">"</div>
+        <blockquote>
+          Coach Marco took six balls to U14 training on Tuesday. Four came back. By Saturday nobody could remember whose bag the other two were in. By November we'd bought twelve new balls we didn't need.
+        </blockquote>
+        <cite>— Every grassroots club, every season</cite>
+      </div>
+    </div>
+  </section>
+
+  <!-- HOW IT WORKS -->
+  <section id="how" class="how reveal">
+    <div class="container">
+      <div class="how__header">
+        <span class="tag">How it works</span>
+        <h2 class="display">Three things.<br />That's the product.</h2>
+      </div>
+
+      <div class="how__steps">
+        <div class="how__step">
+          <div class="how__num">01</div>
+          <div class="how__connector"></div>
+          <h3 class="display">Log what you own</h3>
+          <p>Add a container (a bag, bin, or box) and the items inside it, with a photo, category, and location. Balls, bibs, cones, GK gloves, first aid kits, match kit. No setup wizards, no imports.</p>
+        </div>
+        <div class="how__step">
+          <div class="how__num">02</div>
+          <div class="how__connector"></div>
+          <h3 class="display">Hand it out</h3>
+          <p>When a coach takes equipment to training, log who took what. Tap two buttons. ClubShed remembers it's out with them and when it's due back.</p>
+        </div>
+        <div class="how__step">
+          <div class="how__num">03</div>
+          <h3 class="display">Get it back</h3>
+          <p>Automatic email reminders when gear is overdue. A clean audit log so you know exactly when six balls turned into four. End the November mystery.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FEATURES -->
+  <section id="features" class="features reveal">
+    <div class="container">
+      <div class="features__header">
+        <span class="tag tag--accent">What's in the box</span>
+        <h2 class="display">Built for kit cupboards,<br />not boardrooms.</h2>
+      </div>
+
+      <div class="features__grid">
+        <div class="feature">
+          <div class="feature__icon">📷</div>
+          <h3>Photo-first inventory</h3>
+          <p>Every item has a photo. Find the orange bibs in seconds, not by digging through 47 generic entries.</p>
+        </div>
+        <div class="feature">
+          <div class="feature__icon">🏷️</div>
+          <h3>QR code stickers</h3>
+          <p>Print a QR sticker for every bag and bin. Scan to check in or out. Works on any phone, no extra app for coaches.</p>
+        </div>
+        <div class="feature">
+          <div class="feature__icon">👥</div>
+          <h3>Team allocations</h3>
+          <p>Assign equipment to teams, age groups, or individual coaches. See at a glance what U14 has out versus U16.</p>
+        </div>
+        <div class="feature">
+          <div class="feature__icon">⏰</div>
+          <h3>Return reminders</h3>
+          <p>Set a due-back date. An automatic email reminder lands when gear is overdue, so you are not the one chasing it.</p>
+        </div>
+        <div class="feature">
+          <div class="feature__icon">📋</div>
+          <h3>The audit log</h3>
+          <p>Every check-in, check-out, and transfer is logged. When something disappears, you have the trail.</p>
+        </div>
+        <div class="feature">
+          <div class="feature__icon">📊</div>
+          <h3>End-of-season report</h3>
+          <p>A clean PDF for your committee: what you own, what you lost, what to replace. Funding applications get easier.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SCREENSHOTS GALLERY -->
+  <section class="gallery reveal">
+    <div class="container">
+      <div class="gallery__header">
+        <span class="tag">Real product</span>
+        <h2 class="display">Real screens.<br />Real data. Real club.</h2>
+        <p class="gallery__lede">These are screenshots from the app running at HVV Football Factory right now. Not stock photos. Not designer mockups. The actual product, in active use.</p>
+      </div>
+
+      <div class="gallery__grid">
+        <figure class="gallery__item">
+          <div class="gallery__shot">
+            <div class="gallery__shot-inner">
+              <img src="/screenshot_dashboard.png" alt="ClubShed dashboard showing 62 items in storage, 2 out with coaches, 0 overdue, and the current season status." width="600" height="1022" loading="lazy" />
+            </div>
+          </div>
+          <figcaption>
+            <span class="gallery__num">01</span>
+            <h3>Dashboard</h3>
+            <p>Open the app. See exactly where your kit cupboard stands this morning. Items in, items out, what is overdue.</p>
+          </figcaption>
+        </figure>
+
+        <figure class="gallery__item">
+          <div class="gallery__shot">
+            <div class="gallery__shot-inner">
+              <img src="/screenshot_inventory.png" alt="ClubShed inventory grouped by category: 36 balls (1 out), 2 bibs (1 out), 20 cones." width="600" height="1022" loading="lazy" />
+            </div>
+          </div>
+          <figcaption>
+            <span class="gallery__num">02</span>
+            <h3>Inventory, grouped by category</h3>
+            <p>One row per item, grouped how a kit man thinks. Search, filter, and bulk-assign teams from each category header.</p>
+          </figcaption>
+        </figure>
+
+        <figure class="gallery__item">
+          <div class="gallery__shot">
+            <div class="gallery__shot-inner">
+              <img src="/screenshot_item_qr.png" alt="Item detail page for a football showing condition, team, location, a Check out button, and a real working QR sticker code." width="600" height="1022" loading="lazy" />
+            </div>
+          </div>
+          <figcaption>
+            <span class="gallery__num">03</span>
+            <h3>One tap to check out</h3>
+            <p>Every container gets a QR code. Print it, stick it on the bag, bin, or kit bag, and scan to check the whole lot in or out in one tap.</p>
+          </figcaption>
+        </figure>
+
+        <figure class="gallery__item">
+          <div class="gallery__shot">
+            <div class="gallery__shot-inner">
+              <img src="/screenshot_kit.png" alt="ClubShed Kit page showing 2 kit sets with shirts, shorts, socks, and allocation status." width="600" height="1022" loading="lazy" />
+            </div>
+          </div>
+          <figcaption>
+            <span class="gallery__num">04</span>
+            <h3>Match kit, tracked properly</h3>
+            <p>A separate section for kit sets. Shirts, shorts, socks. Numbers, sizes, allocations to players, condition over seasons.</p>
+          </figcaption>
+        </figure>
+      </div>
+    </div>
+  </section>
+
+  <!-- BUILT BY -->
+  <section class="builder reveal">
+    <div class="container">
+      <div class="builder__grid">
+        <div>
+          <span class="tag">Built by</span>
+          <h2 class="display">A grassroots co-founder.<br />Not a software company.</h2>
+        </div>
+        <div class="builder__copy">
+          <p>I co-founded HVV Football Factory, a grassroots football club originally based in The Hague. Three years in, we kept running into the same problem: equipment vanished. Footballs left in car boots. Bibs taken home to wash and never returned. Jerseys kept by players who left mid-season. About €1,000 of gear gone every year, replaced and gone again.</p>
+          <p>We tried the obvious fixes. A WhatsApp group lasted three weeks. A Google Sheet worked until people stopped updating it. Spond's equipment feature was bolted on and didn't fit the kit cupboard. Pen and paper beat all of them, until the paper got wet.</p>
+          <p>So I built the tool I wished my own club had. Affordable enough that any volunteer can sign up without a committee vote. Narrow enough that it does the one thing properly. Useful enough that the kit man actually opens it on a Tuesday night.</p>
+          <p>ClubShed is in active use at HVV. Every feature is something a real grassroots volunteer (often me) actually needed. If you have an idea, you can email me directly. I'll probably reply within a day.</p>
+          <div class="builder__signature">
+            <img src="/founder_96.png" alt="Lucas Seewald" class="builder__signature-photo" width="56" height="56" loading="lazy" />
+            <div>
+              <div class="builder__signature-name">Lucas Seewald, co-founder</div>
+              <div class="builder__signature-location">Madrid, Spain</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="home-faq reveal" id="faq">
+    <div class="container">
+      <div class="home-faq__header">
+        <span class="tag">Common questions</span>
+        <h2 class="display">The honest answers,<br />before you sign up.</h2>
+      </div>
+
+      <div class="home-faq__list">
+        <details class="home-faq__item">
+          <summary>
+            <span>Will I lose my data if I cancel?</span>
+            <svg class="home-faq__chevron" viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><path d="M6 9l6 6 6-6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </summary>
+          <div class="home-faq__body">
+            <p>No. Your data is yours. You can export your full inventory as CSV at any time, in two clicks, with no subscription. If you cancel a paid plan you keep your account on the Free tier (1 team, 30 items) and all your data stays. If you delete your account, everything is wiped within 30 days. No hostage situations.</p>
+          </div>
+        </details>
+
+        <details class="home-faq__item">
+          <summary>
+            <span>We already use Spond. Do we need to switch?</span>
+            <svg class="home-faq__chevron" viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><path d="M6 9l6 6 6-6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </summary>
+          <div class="home-faq__body">
+            <p>No. Keep using Spond. It's great for fixtures, parent communication, and payments. ClubShed sits next to it for the equipment piece that Spond doesn't do well. Most of our users run both. The full honest comparison is on <a href="/compare/spond/">our Spond comparison page</a>.</p>
+          </div>
+        </details>
+
+        <details class="home-faq__item">
+          <summary>
+            <span>Does it work in a kit cupboard with no signal?</span>
+            <svg class="home-faq__chevron" viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><path d="M6 9l6 6 6-6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </summary>
+          <div class="home-faq__body">
+            <p>Mostly yes. ClubShed is a web app that runs in your phone's browser, so the page loads on whatever signal you have and stays usable while you scan items and edit. Changes sync the moment you're back on Wi-Fi or 4G. Most modern kit cupboards have at least one bar of 5G these days. If yours doesn't, the worst case is you queue up the check-ins on a paper note and clear them when you step outside.</p>
+          </div>
+        </details>
+
+        <details class="home-faq__item">
+          <summary>
+            <span>Do my coaches need to install an app?</span>
+            <svg class="home-faq__chevron" viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><path d="M6 9l6 6 6-6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </summary>
+          <div class="home-faq__body">
+            <p>No. Nothing to install for anyone. ClubShed runs in any phone browser. Coaches can scan a QR sticker with their normal phone camera to check items in or out. You can add it to your home screen if you want it to behave like an app, but nothing in the app store, nothing to update, no permissions to grant.</p>
+          </div>
+        </details>
+
+        <details class="home-faq__item">
+          <summary>
+            <span>Is my club's data private?</span>
+            <svg class="home-faq__chevron" viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><path d="M6 9l6 6 6-6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </summary>
+          <div class="home-faq__body">
+            <p>Yes. ClubShed is built and hosted in Europe (Cloudflare and Resend, both EU regions). Your data is never sold, never used for advertising, never shared with third parties. No analytics that track you across the web, no Facebook pixel, no Google Ads tags. We're GDPR-compliant by default because we collect almost nothing about you in the first place. The <a href="/privacy/">full privacy policy</a> is in plain English.</p>
+          </div>
+        </details>
+
+        <details class="home-faq__item">
+          <summary>
+            <span>Spond is free. Why pay €15.99 a month?</span>
+            <svg class="home-faq__chevron" viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><path d="M6 9l6 6 6-6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </summary>
+          <div class="home-faq__body">
+            <p>Because narrow tools that do one thing well are worth a small amount of money. Spond monetises through transaction fees on the payment side. ClubShed monetises through a simple subscription. €15.99/month is about the cost of one lost football. Most clubs lose hundreds of euros of equipment every season because they don't have a system. If ClubShed prevents even one season of that, it pays for itself many times over. And if it doesn't work for you, the Free plan covers one team forever, no card required.</p>
+          </div>
+        </details>
+      </div>
+
+      <p class="home-faq__more">
+        Still wondering? <a href="/contact/">Ask me directly</a>, or read the <a href="/pricing/#faq">pricing page FAQ</a>.
+      </p>
+    </div>
+  </section>
+
+  <!-- INTERNAL LINKS / RELATED -->
+  <section class="related reveal">
+    <div class="container">
+      <div class="related__header">
+        <span class="tag">Read more</span>
+        <h2 class="display">Practical guides for grassroots clubs.</h2>
+      </div>
+      <div class="related__grid">
+        <a href="/blog/football-kit-ordering-guide-grassroots/" class="related__card">
+          <span class="related__tag">Kit</span>
+          <h3>The grassroots football kit ordering guide</h3>
+          <p>Real 2026 prices, which suppliers are worth your time, and what to do once the kit arrives so you don't lose half of it.</p>
+          <span class="related__more">Read the guide →</span>
+        </a>
+        <a href="/blog/how-to-start-grassroots-football-club/" class="related__card">
+          <span class="related__tag">Club setup</span>
+          <h3>How to start a grassroots football club in 2026</h3>
+          <p>Legal structure, FA affiliation, safeguarding, pitches, players, and the systems that keep a club alive past year three.</p>
+          <span class="related__more">Read the guide →</span>
+        </a>
+        <a href="/blog/end-of-season-equipment-audit/" class="related__card">
+          <span class="related__tag">Audit</span>
+          <h3>How to run an end-of-season equipment audit</h3>
+          <p>The step-by-step process for closing out your season, marking what's lost, and producing a grant-ready report.</p>
+          <span class="related__more">Read the guide →</span>
+        </a>
+      </div>
+      <div class="related__all">
+        <a href="/blog/" class="related__all-link">See all guides →</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- FINAL CTA -->
+  <section class="final-cta reveal">
+    <div class="container">
+      <div class="final-cta__inner">
+        <h2 class="display">Your bibs are not lost.<br />They're just untracked.</h2>
+        <p>Start free with one team. Upgrade to paid (€15.99/month) when you're ready to track your whole club.</p>
+        <div class="final-cta__actions">
+          <a href="https://app.clubshed.pro/signup" class="btn btn--accent btn--lg">Start free</a>
+          <a href="/blog/grassroots-football-equipment-guide/" class="btn btn--ghost btn--lg">Read the guide first</a>
+        </div>
+      </div>
+    </div>
+  </section>
+</BaseLayout>
+
+<script is:inline>
+  if ('IntersectionObserver' in window && !window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('is-visible');
+            observer.unobserve(entry.target);
+          }
+        });
+      },
+      { threshold: 0.15, rootMargin: '0px 0px -60px 0px' }
+    );
+    document.querySelectorAll('.reveal').forEach((el) => observer.observe(el));
+  } else {
+    document.querySelectorAll('.reveal').forEach((el) => el.classList.add('is-visible'));
+  }
+</script>
+
+<style>
+  :global(.btn--lg) {
+    padding: 1.05rem 1.8rem;
+    font-size: 1rem;
+  }
+
+  :global(.btn__arrow) {
+    display: inline-block;
+    transition: transform 0.2s ease;
+  }
+
+  :global(.btn:hover .btn__arrow) {
+    transform: translateX(4px);
+  }
+
+  /* HERO */
+  .hero {
+    padding: clamp(3rem, 6vw, 5rem) 0 0;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .hero__bg {
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    z-index: 0;
+  }
+
+  .hero__grid-overlay {
+    position: absolute;
+    inset: 0;
+    background-image:
+      linear-gradient(to right, rgba(28, 28, 28, 0.04) 1px, transparent 1px),
+      linear-gradient(to bottom, rgba(28, 28, 28, 0.04) 1px, transparent 1px);
+    background-size: 60px 60px;
+    mask-image: radial-gradient(ellipse at 50% 30%, black 30%, transparent 80%);
+    -webkit-mask-image: radial-gradient(ellipse at 50% 30%, black 30%, transparent 80%);
+  }
+
+  .hero__inner {
+    display: grid;
+    grid-template-columns: 1.05fr 0.95fr;
+    gap: 4rem;
+    align-items: center;
+    padding-bottom: 4rem;
+    position: relative;
+    z-index: 1;
+  }
+
+  @media (max-width: 960px) {
+    .hero__inner {
+      grid-template-columns: 1fr;
+      gap: 3rem;
+    }
+  }
+
+  .hero__copy .tag {
+    margin-bottom: 1.75rem;
+    background: var(--chalk-warm);
+  }
+
+  .tag__dot {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: var(--grass-bright);
+    animation: pulse 2s ease-in-out infinite;
+  }
+
+  .hero__h1 {
+    font-size: clamp(3.5rem, 9vw, 8rem);
+    line-height: 0.9;
+  }
+
+  .hero__line {
+    display: block;
+  }
+
+  .hero__accent {
+    color: var(--kit-orange);
+    position: relative;
+    display: inline-block;
+  }
+
+  .hero__accent::after {
+    content: '';
+    position: absolute;
+    left: -2%;
+    right: -2%;
+    bottom: 0.08em;
+    height: 0.12em;
+    background: var(--kit-orange);
+    opacity: 0.2;
+    transform: skewY(-1deg);
+  }
+
+  .hero__lede {
+    font-size: clamp(1.05rem, 1.4vw, 1.25rem);
+    margin: 1.75rem 0 2.25rem;
+    color: var(--asphalt);
+    max-width: 50ch;
+    line-height: 1.55;
+  }
+
+  .hero__cta {
+    display: flex;
+    gap: 0.85rem;
+    flex-wrap: wrap;
+    margin-bottom: 2.25rem;
+  }
+
+  .hero__trust {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.5rem 1.75rem;
+    font-size: 0.92rem;
+    color: var(--muted);
+  }
+
+  .hero__trust-item {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+
+  .check {
+    color: var(--grass-bright);
+    font-weight: 700;
+    font-family: var(--font-mono);
+  }
+
+  /* SCOREBOARD */
+  .hero__visual {
+    position: relative;
+    height: 520px;
+  }
+
+  @media (max-width: 960px) {
+    .hero__visual {
+      height: auto;
+      min-height: 460px;
+      max-width: 440px;
+      margin: 0 auto;
+      width: 100%;
+    }
+  }
+
+  @media (max-width: 520px) {
+    .hero__visual {
+      min-height: 420px;
+      max-width: 100%;
+      padding-right: 1rem;
+    }
+  }
+
+  .scoreboard {
+    position: absolute;
+    inset: 0;
+    background: var(--pitch-deep);
+    border: 2px solid var(--asphalt);
+    border-radius: var(--radius);
+    box-shadow: 12px 12px 0 var(--kit-orange);
+    color: var(--chalk);
+    overflow: hidden;
+    transform: rotate(-1.5deg);
+  }
+
+  @media (max-width: 520px) {
+    .scoreboard {
+      transform: rotate(-1deg);
+      box-shadow: 6px 6px 0 var(--kit-orange);
+      inset: 0 2rem 0 0;
+    }
+  }
+
+  .scoreboard__head {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1rem 1.25rem;
+    background: rgba(0, 0, 0, 0.3);
+    border-bottom: 1px solid rgba(244, 241, 234, 0.1);
+    font-family: var(--font-mono);
+    font-size: 0.72rem;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+  }
+
+  .scoreboard__indicator {
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+    color: var(--kit-orange);
+    font-weight: 600;
+  }
+
+  .scoreboard__pulse {
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    background: var(--kit-orange);
+    animation: pulse 1.5s ease-in-out infinite;
+    box-shadow: 0 0 8px var(--kit-orange);
+  }
+
+  .scoreboard__title {
+    font-family: var(--font-display);
+    font-size: 1rem;
+    letter-spacing: 0.05em;
+    color: var(--chalk);
+  }
+
+  .scoreboard__date {
+    opacity: 0.5;
+  }
+
+  .scoreboard__body {
+    padding: 0.5rem;
+  }
+
+  .ticker-row {
+    display: flex;
+    align-items: center;
+    gap: 0.85rem;
+    padding: 0.85rem 0.85rem;
+    border-bottom: 1px solid rgba(244, 241, 234, 0.06);
+    animation: ticker-in 0.6s cubic-bezier(0.16, 1, 0.3, 1) both;
+  }
+
+  @media (max-width: 520px) {
+    .ticker-row {
+      gap: 0.55rem;
+      padding: 0.65rem 0.65rem;
+    }
+  }
+
+  .ticker-row:nth-child(1) { animation-delay: 0.4s; }
+  .ticker-row:nth-child(2) { animation-delay: 0.55s; }
+  .ticker-row:nth-child(3) { animation-delay: 0.7s; }
+  .ticker-row:nth-child(4) { animation-delay: 0.85s; }
+
+  @keyframes ticker-in {
+    from { opacity: 0; transform: translateX(-12px); }
+    to { opacity: 1; transform: translateX(0); }
+  }
+
+  .ticker-row__icon {
+    font-size: 1.4rem;
+    width: 38px;
+    height: 38px;
+    display: grid;
+    place-items: center;
+    background: rgba(244, 241, 234, 0.06);
+    border-radius: var(--radius-sm);
+    flex-shrink: 0;
+  }
+
+  @media (max-width: 520px) {
+    .ticker-row__icon {
+      width: 32px;
+      height: 32px;
+      font-size: 1.15rem;
+    }
+  }
+
+  .ticker-row__main {
+    flex: 1;
+    min-width: 0;
+  }
+
+  .ticker-row__label {
+    font-family: var(--font-display);
+    font-size: 1.05rem;
+    letter-spacing: 0.02em;
+    line-height: 1;
+    margin-bottom: 0.25rem;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  @media (max-width: 520px) {
+    .ticker-row__label {
+      font-size: 0.95rem;
+    }
+  }
+
+  .ticker-row__sub {
+    font-size: 0.78rem;
+    opacity: 0.6;
+    font-family: var(--font-mono);
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  @media (max-width: 520px) {
+    .ticker-row__sub {
+      font-size: 0.7rem;
+    }
+  }
+
+  .ticker-row__status {
+    font-family: var(--font-mono);
+    font-size: 0.72rem;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    padding: 0.3rem 0.55rem;
+    border-radius: var(--radius-sm);
+  }
+
+  .ticker-row--out .ticker-row__status {
+    background: rgba(232, 85, 42, 0.15);
+    color: var(--kit-orange);
+    border: 1px solid rgba(232, 85, 42, 0.4);
+  }
+
+  .ticker-row--in .ticker-row__status {
+    background: rgba(74, 143, 94, 0.15);
+    color: var(--grass-bright);
+    border: 1px solid rgba(74, 143, 94, 0.4);
+  }
+
+  .ticker-row--late .ticker-row__status {
+    background: rgba(214, 40, 40, 0.2);
+    color: #ff6b6b;
+    border: 1px solid rgba(214, 40, 40, 0.5);
+    animation: pulse 1.5s ease-in-out infinite;
+  }
+
+  .scoreboard__foot {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    background: rgba(0, 0, 0, 0.25);
+    border-top: 1px solid rgba(244, 241, 234, 0.08);
+  }
+
+  .scoreboard__stat {
+    text-align: center;
+    padding: 1rem 0.5rem;
+    border-right: 1px solid rgba(244, 241, 234, 0.08);
+  }
+
+  .scoreboard__stat:last-child {
+    border-right: none;
+  }
+
+  .scoreboard__stat-num {
+    display: block;
+    font-family: var(--font-display);
+    font-size: 2.4rem;
+    line-height: 1;
+    color: var(--chalk);
+  }
+
+  .scoreboard__stat--alert .scoreboard__stat-num {
+    color: #ff6b6b;
+  }
+
+  .scoreboard__stat-label {
+    display: block;
+    font-family: var(--font-mono);
+    font-size: 0.68rem;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    opacity: 0.6;
+    margin-top: 0.25rem;
+  }
+
+  .floating-card {
+    position: absolute;
+    background: var(--chalk);
+    border: 2px solid var(--asphalt);
+    border-radius: var(--radius);
+    padding: 0.85rem;
+    box-shadow: 4px 4px 0 var(--pitch);
+    z-index: 2;
+    transform: rotate(6deg);
+    animation: float-card 4s ease-in-out infinite;
+  }
+
+  @keyframes float-card {
+    0%, 100% { transform: rotate(6deg) translateY(0); }
+    50% { transform: rotate(6deg) translateY(-6px); }
+  }
+
+  .floating-card--qr {
+    bottom: -2rem;
+    right: -1.5rem;
+  }
+
+  @media (max-width: 520px) {
+    .floating-card--qr {
+      bottom: -1rem;
+      right: 0.5rem;
+      padding: 0.6rem;
+    }
+
+    .floating-card--qr .floating-card__qr {
+      width: 64px;
+      height: 64px;
+    }
+  }
+
+  .floating-card__qr {
+    width: 80px;
+    height: 80px;
+    margin-bottom: 0.5rem;
+  }
+
+  .floating-card__qr svg {
+    width: 100%;
+    height: 100%;
+    border-radius: var(--radius-sm);
+  }
+
+  .floating-card__id {
+    font-family: var(--font-mono);
+    font-size: 0.78rem;
+    text-align: center;
+    font-weight: 600;
+    letter-spacing: 0.05em;
+  }
+
+  /* MARQUEE */
+  .marquee {
+    border-top: 2px solid var(--asphalt);
+    border-bottom: 2px solid var(--asphalt);
+    background: var(--asphalt);
+    color: var(--chalk);
+    padding: 0.85rem 0;
+    overflow: hidden;
+    position: relative;
+    z-index: 1;
+  }
+
+  .marquee__track {
+    display: flex;
+    gap: 2rem;
+    width: max-content;
+    animation: marquee 40s linear infinite;
+    font-family: var(--font-mono);
+    font-size: 0.85rem;
+    letter-spacing: 0.05em;
+  }
+
+  @keyframes marquee {
+    from { transform: translateX(0); }
+    to { transform: translateX(-50%); }
+  }
+
+  .marquee__item {
+    display: inline-flex;
+    align-items: center;
+    gap: 2rem;
+    white-space: nowrap;
+  }
+
+  .marquee__sep {
+    color: var(--kit-orange);
+    font-weight: 700;
+  }
+
+  /* PRODUCT PREVIEW */
+  .preview {
+    padding: clamp(5rem, 9vw, 8rem) 0;
+    background: var(--chalk);
+  }
+
+  .preview__header {
+    text-align: center;
+    margin-bottom: 4rem;
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .preview__header .tag {
+    margin-bottom: 1.5rem;
+  }
+
+  .preview__lede {
+    margin: 1.25rem auto 0;
+    color: var(--muted);
+    font-size: 1.05rem;
+  }
+
+  .preview__phone-wrap {
+    display: grid;
+    grid-template-columns: 1fr auto 1fr;
+    align-items: center;
+    gap: 2.5rem;
+    max-width: 1100px;
+    margin: 0 auto;
+  }
+
+  @media (max-width: 960px) {
+    .preview__phone-wrap {
+      grid-template-columns: 1fr;
+      gap: 1.5rem;
+    }
+  }
+
+  .preview__phone {
+    width: 300px;
+    height: 640px;
+    background: var(--asphalt);
+    border-radius: 38px;
+    padding: 12px;
+    box-shadow:
+      0 0 0 2px var(--asphalt),
+      20px 20px 0 var(--kit-orange);
+    position: relative;
+    justify-self: center;
+  }
+
+  @media (max-width: 960px) {
+    .preview__phone {
+      margin: 0 auto;
+      order: 1;
+    }
+  }
+
+  @media (max-width: 520px) {
+    .preview__phone {
+      width: 280px;
+      height: 600px;
+      box-shadow:
+        0 0 0 2px var(--asphalt),
+        10px 10px 0 var(--kit-orange);
+    }
+  }
+
+  .preview__phone-notch {
+    position: absolute;
+    top: 12px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100px;
+    height: 22px;
+    background: var(--asphalt);
+    border-radius: 0 0 12px 12px;
+    z-index: 2;
+  }
+
+  .preview__phone-screen {
+    width: 100%;
+    height: 100%;
+    background: var(--chalk);
+    border-radius: 26px;
+    overflow: hidden;
+    position: relative;
+  }
+
+  .preview__phone-img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    object-position: top center;
+    display: block;
+    background: var(--chalk);
+  }
+
+  .phone-app {
+    padding: 2.25rem 1.25rem 1.25rem;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .phone-app__header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 0.5rem;
+  }
+
+  .phone-app__hi {
+    font-family: var(--font-mono);
+    font-size: 0.72rem;
+    opacity: 0.6;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    margin-bottom: 0.15rem;
+  }
+
+  .phone-app__club {
+    font-family: var(--font-display);
+    font-size: 1.4rem;
+    line-height: 1;
+  }
+
+  .phone-app__avatar {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    background: var(--pitch);
+    color: var(--chalk);
+    display: grid;
+    place-items: center;
+    font-weight: 700;
+    font-size: 0.95rem;
+  }
+
+  .phone-app__stats {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 0.5rem;
+  }
+
+  .phone-stat {
+    background: var(--chalk-warm);
+    border: 1.5px solid var(--asphalt);
+    border-radius: var(--radius-sm);
+    padding: 0.75rem 0.5rem;
+    text-align: center;
+  }
+
+  .phone-stat__num {
+    font-family: var(--font-display);
+    font-size: 1.6rem;
+    line-height: 1;
+  }
+
+  .phone-stat__label {
+    font-family: var(--font-mono);
+    font-size: 0.62rem;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    opacity: 0.6;
+    margin-top: 0.3rem;
+  }
+
+  .phone-stat--alert {
+    background: rgba(232, 85, 42, 0.1);
+    border-color: var(--kit-orange);
+  }
+
+  .phone-stat--alert .phone-stat__num {
+    color: var(--kit-orange);
+  }
+
+  .phone-app__section-title {
+    font-family: var(--font-mono);
+    font-size: 0.68rem;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    opacity: 0.55;
+    margin-top: 0.5rem;
+  }
+
+  .phone-feed {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    flex: 1;
+  }
+
+  .phone-feed__item {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.65rem;
+    padding: 0.6rem;
+    background: var(--chalk-warm);
+    border-radius: var(--radius-sm);
+  }
+
+  .phone-feed__dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    margin-top: 0.4rem;
+    flex-shrink: 0;
+  }
+
+  .phone-feed__dot--out { background: var(--kit-orange); }
+  .phone-feed__dot--in { background: var(--grass-bright); }
+  .phone-feed__dot--late {
+    background: #d62828;
+    animation: pulse 1.5s ease-in-out infinite;
+  }
+
+  .phone-feed__main {
+    font-size: 0.85rem;
+    line-height: 1.3;
+  }
+
+  .phone-feed__time {
+    font-family: var(--font-mono);
+    font-size: 0.68rem;
+    opacity: 0.55;
+    margin-top: 0.2rem;
+  }
+
+  .phone-scan-btn {
+    background: var(--kit-orange);
+    color: var(--chalk);
+    text-align: center;
+    padding: 0.85rem;
+    border-radius: var(--radius-sm);
+    font-weight: 600;
+    font-size: 0.92rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+  }
+
+  .phone-scan-icon {
+    font-size: 1.1rem;
+  }
+
+  .preview__callouts-right {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+
+  @media (max-width: 960px) {
+    .preview__callouts-right {
+      order: 2;
+    }
+  }
+
+  .callout {
+    padding: 1.25rem;
+    background: var(--chalk-warm);
+    border: 1.5px solid var(--asphalt);
+    border-radius: var(--radius);
+    max-width: 280px;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+  }
+
+  .callout:hover {
+    transform: translate(-2px, -2px);
+    box-shadow: 4px 4px 0 var(--kit-orange);
+  }
+
+  .callout--1 {
+    justify-self: end;
+    margin-bottom: 0;
+  }
+
+  @media (max-width: 960px) {
+    .callout {
+      max-width: none;
+      justify-self: stretch;
+    }
+    .callout--1 {
+      order: 2;
+    }
+  }
+
+  .callout__num {
+    font-family: var(--font-mono);
+    font-size: 0.72rem;
+    color: var(--kit-orange);
+    letter-spacing: 0.1em;
+    margin-bottom: 0.5rem;
+    font-weight: 600;
+  }
+
+  .callout h3 {
+    font-family: var(--font-display);
+    font-size: 1.25rem;
+    margin-bottom: 0.5rem;
+    letter-spacing: 0.01em;
+  }
+
+  .callout p {
+    font-size: 0.9rem;
+    color: var(--muted);
+    line-height: 1.5;
+  }
+
+  /* PROBLEM */
+  .problem {
+    background: var(--chalk-warm);
+    border-top: 2px solid var(--asphalt);
+    border-bottom: 2px solid var(--asphalt);
+  }
+
+  .problem__header {
+    text-align: center;
+    margin-bottom: 4rem;
+  }
+
+  .problem__header .tag {
+    margin-bottom: 1.5rem;
+  }
+
+  .problem__header h2 {
+    max-width: 22ch;
+    margin: 0 auto;
+  }
+
+  .scoreboard-stats {
+    max-width: 820px;
+    margin: 0 auto 4rem;
+    background: var(--asphalt);
+    color: var(--chalk);
+    border-radius: var(--radius);
+    padding: 2rem;
+    box-shadow: 12px 12px 0 var(--kit-orange);
+  }
+
+  @media (max-width: 520px) {
+    .scoreboard-stats {
+      padding: 1.25rem;
+      box-shadow: 6px 6px 0 var(--kit-orange);
+    }
+  }
+
+  .scoreboard-stats__row {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    gap: 1rem;
+    align-items: baseline;
+    padding: 1.25rem 0;
+    border-bottom: 1px solid rgba(244, 241, 234, 0.1);
+  }
+
+  .scoreboard-stats__row:last-child {
+    border-bottom: none;
+  }
+
+  .scoreboard-stats__label {
+    font-family: var(--font-body);
+    font-size: 0.95rem;
+    opacity: 0.85;
+  }
+
+  .scoreboard-stats__num {
+    font-family: var(--font-display);
+    font-size: 2.4rem;
+    line-height: 1;
+    color: var(--kit-orange);
+    letter-spacing: 0.01em;
+  }
+
+  .scoreboard-stats__bar {
+    grid-column: 1 / -1;
+    height: 4px;
+    background: rgba(244, 241, 234, 0.08);
+    border-radius: 2px;
+    overflow: hidden;
+    margin-top: 0.75rem;
+  }
+
+  .scoreboard-stats__bar span {
+    display: block;
+    height: 100%;
+    background: var(--kit-orange);
+    border-radius: 2px;
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 1.2s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+
+  .reveal.is-visible .scoreboard-stats__bar span {
+    transform: scaleX(1);
+  }
+
+  .problem__quote {
+    max-width: 720px;
+    margin: 0 auto;
+    padding: 2.5rem 2rem;
+    background: var(--chalk);
+    border-left: 4px solid var(--kit-orange);
+    position: relative;
+  }
+
+  .problem__quote-mark {
+    position: absolute;
+    top: -1rem;
+    left: 1.5rem;
+    font-family: var(--font-display);
+    font-size: 6rem;
+    color: var(--kit-orange);
+    line-height: 1;
+  }
+
+  .problem__quote blockquote {
+    font-size: clamp(1.1rem, 1.6vw, 1.35rem);
+    font-style: italic;
+    line-height: 1.55;
+    margin-bottom: 1rem;
+  }
+
+  .problem__quote cite {
+    font-family: var(--font-mono);
+    font-size: 0.78rem;
+    color: var(--muted);
+    font-style: normal;
+    letter-spacing: 0.05em;
+  }
+
+  /* HOW IT WORKS */
+  .how__header {
+    text-align: center;
+    margin-bottom: 4.5rem;
+  }
+
+  .how__header .tag {
+    margin-bottom: 1.5rem;
+  }
+
+  .how__steps {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 3rem;
+    position: relative;
+  }
+
+  @media (max-width: 880px) {
+    .how__steps {
+      grid-template-columns: 1fr;
+      gap: 2.5rem;
+    }
+  }
+
+  .how__step {
+    position: relative;
+  }
+
+  .how__num {
+    font-family: var(--font-display);
+    font-size: 4rem;
+    color: var(--kit-orange);
+    line-height: 1;
+    margin-bottom: 1rem;
+    display: block;
+  }
+
+  .how__connector {
+    position: absolute;
+    top: 1.8rem;
+    left: 4.5rem;
+    right: -3rem;
+    height: 2px;
+    background: repeating-linear-gradient(
+      to right,
+      var(--asphalt) 0,
+      var(--asphalt) 8px,
+      transparent 8px,
+      transparent 16px
+    );
+  }
+
+  @media (max-width: 880px) {
+    .how__connector { display: none; }
+  }
+
+  .how__step h3 {
+    margin-bottom: 0.75rem;
+  }
+
+  .how__step p {
+    color: var(--muted);
+    font-size: 0.95rem;
+  }
+
+  /* FEATURES */
+  .features {
+    background: var(--pitch-deep);
+    color: var(--chalk);
+  }
+
+  .features__header {
+    text-align: center;
+    margin-bottom: 4rem;
+  }
+
+  .features__header .tag {
+    margin-bottom: 1.5rem;
+  }
+
+  .features__grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 0;
+    border: 1px solid rgba(244, 241, 234, 0.15);
+  }
+
+  @media (max-width: 880px) {
+    .features__grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  @media (max-width: 560px) {
+    .features__grid {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  .feature {
+    padding: 2.5rem 2rem;
+    border-right: 1px solid rgba(244, 241, 234, 0.15);
+    border-bottom: 1px solid rgba(244, 241, 234, 0.15);
+    transition: background 0.2s ease;
+  }
+
+  .feature:hover {
+    background: rgba(232, 85, 42, 0.08);
+  }
+
+  .feature:nth-child(3n) {
+    border-right: none;
+  }
+
+  @media (max-width: 880px) {
+    .feature:nth-child(3n) { border-right: 1px solid rgba(244, 241, 234, 0.15); }
+    .feature:nth-child(2n) { border-right: none; }
+  }
+
+  .feature__icon {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+    display: block;
+  }
+
+  .feature h3 {
+    font-family: var(--font-display);
+    font-size: 1.4rem;
+    margin-bottom: 0.5rem;
+    letter-spacing: 0.01em;
+  }
+
+  .feature p {
+    font-size: 0.92rem;
+    opacity: 0.75;
+    line-height: 1.55;
+  }
+
+  /* BUILDER */
+  .builder__grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    align-items: center;
+  }
+
+  @media (max-width: 760px) {
+    .builder__grid {
+      grid-template-columns: 1fr;
+      gap: 2rem;
+    }
+  }
+
+  .builder__grid .tag {
+    margin-bottom: 1rem;
+  }
+
+  .builder__copy p {
+    margin-bottom: 1rem;
+    color: var(--muted);
+  }
+
+  .builder__signature {
+    margin-top: 2rem;
+    padding-top: 1.5rem;
+    border-top: 1px solid var(--line);
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+  }
+
+  .builder__signature-photo {
+    width: 56px;
+    height: 56px;
+    border-radius: 50%;
+    object-fit: cover;
+    flex-shrink: 0;
+    box-shadow: 0 0 0 1.5px var(--asphalt);
+    display: block;
+  }
+
+  .builder__signature-name {
+    font-family: var(--font-display);
+    font-size: 1.05rem;
+    color: var(--asphalt);
+    letter-spacing: 0.01em;
+    line-height: 1.2;
+  }
+
+  .builder__signature-location {
+    font-family: var(--font-mono);
+    font-size: 0.78rem;
+    font-weight: 400;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--muted);
+    margin-top: 0.35rem;
+  }
+
+  /* SCREENSHOTS GALLERY */
+  .gallery {
+    padding: clamp(4rem, 8vw, 7rem) 0;
+    background: var(--chalk-warm);
+    border-top: 2px solid var(--asphalt);
+    border-bottom: 2px solid var(--asphalt);
+  }
+
+  .gallery__header {
+    text-align: center;
+    margin-bottom: clamp(2.5rem, 5vw, 4rem);
+    max-width: 720px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .gallery__header .tag {
+    margin-bottom: 1rem;
+  }
+
+  .gallery__header h2 {
+    line-height: 1;
+    margin-bottom: 1.5rem;
+  }
+
+  .gallery__lede {
+    color: var(--muted);
+    line-height: 1.6;
+    max-width: 50ch;
+    margin: 0 auto;
+    font-size: clamp(1rem, 1.3vw, 1.1rem);
+  }
+
+  .gallery__grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 2rem;
+    max-width: 1280px;
+    margin: 0 auto;
+  }
+
+  @media (max-width: 1080px) {
+    .gallery__grid {
+      grid-template-columns: repeat(2, 1fr);
+      gap: 2.5rem;
+    }
+  }
+
+  @media (max-width: 640px) {
+    .gallery__grid {
+      grid-template-columns: 1fr;
+      gap: 3rem;
+      max-width: 360px;
+    }
+  }
+
+  .gallery__item {
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .gallery__shot {
+    background: var(--asphalt);
+    border: 2px solid var(--asphalt);
+    border-radius: 28px;
+    overflow: hidden;
+    aspect-ratio: 600 / 1080;
+    box-shadow: 6px 6px 0 var(--asphalt);
+    margin-bottom: 1.5rem;
+    transition: transform 0.18s ease, box-shadow 0.18s ease;
+    padding: 10px;
+  }
+
+  .gallery__item:hover .gallery__shot {
+    transform: translate(-2px, -2px);
+    box-shadow: 8px 8px 0 var(--kit-orange);
+  }
+
+  .gallery__shot-inner {
+    width: 100%;
+    height: 100%;
+    background: var(--chalk);
+    border-radius: 18px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .gallery__shot-inner::before {
+    content: "";
+    flex: 0 0 18px;
+    background: var(--chalk);
+  }
+
+  .gallery__shot img {
+    width: 100%;
+    flex: 1 1 auto;
+    min-height: 0;
+    object-fit: cover;
+    object-position: top center;
+    display: block;
+  }
+
+  .gallery__item figcaption {
+    padding: 0 0.25rem;
+  }
+
+  .gallery__num {
+    font-family: var(--font-mono);
+    font-size: 0.75rem;
+    font-weight: 600;
+    color: var(--kit-orange);
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    display: inline-block;
+    margin-bottom: 0.5rem;
+  }
+
+  .gallery__item h3 {
+    font-family: var(--font-display);
+    font-size: clamp(1.15rem, 1.6vw, 1.4rem);
+    letter-spacing: 0.01em;
+    line-height: 1.1;
+    margin-bottom: 0.6rem;
+    color: var(--asphalt);
+  }
+
+  .gallery__item figcaption p {
+    color: var(--muted);
+    font-size: 0.95rem;
+    line-height: 1.55;
+    margin: 0;
+  }
+
+  /* HOME FAQ */
+  .home-faq {
+    padding: clamp(4rem, 8vw, 7rem) 0;
+  }
+
+  .home-faq__header {
+    text-align: center;
+    margin-bottom: 3rem;
+    max-width: 720px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .home-faq__header .tag {
+    margin-bottom: 1rem;
+  }
+
+  .home-faq__header h2 {
+    line-height: 1;
+  }
+
+  .home-faq__list {
+    max-width: 760px;
+    margin: 0 auto;
+    border-top: 1px solid var(--line);
+  }
+
+  .home-faq__item {
+    border-bottom: 1px solid var(--line);
+  }
+
+  .home-faq__item > summary {
+    list-style: none;
+    cursor: pointer;
+    padding: 1.5rem 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1.5rem;
+    font-family: var(--font-display);
+    font-size: clamp(1.05rem, 1.4vw, 1.25rem);
+    letter-spacing: 0.01em;
+    color: var(--asphalt);
+    transition: color 0.18s ease;
+  }
+
+  .home-faq__item > summary::-webkit-details-marker {
+    display: none;
+  }
+
+  .home-faq__item > summary:hover {
+    color: var(--kit-orange);
+  }
+
+  .home-faq__chevron {
+    flex-shrink: 0;
+    transition: transform 0.22s ease;
+    color: var(--muted);
+  }
+
+  .home-faq__item[open] .home-faq__chevron {
+    transform: rotate(180deg);
+    color: var(--kit-orange);
+  }
+
+  .home-faq__body {
+    padding: 0 0 1.5rem;
+  }
+
+  .home-faq__body p {
+    margin: 0;
+    line-height: 1.65;
+    color: var(--muted);
+    max-width: 66ch;
+  }
+
+  .home-faq__body a {
+    color: var(--kit-orange);
+    text-decoration: underline;
+    text-underline-offset: 3px;
+  }
+
+  .home-faq__more {
+    text-align: center;
+    margin-top: 2.5rem;
+    font-family: var(--font-mono);
+    font-size: 0.85rem;
+    color: var(--muted);
+  }
+
+  .home-faq__more a {
+    color: var(--kit-orange);
+    text-decoration: underline;
+    text-underline-offset: 3px;
+  }
+
+  /* RELATED CARDS */
+  .related {
+    padding: clamp(4rem, 8vw, 7rem) 0;
+    background: var(--chalk-warm);
+    border-top: 2px solid var(--asphalt);
+  }
+
+  .related__header {
+    text-align: center;
+    margin-bottom: 3rem;
+  }
+
+  .related__header .tag {
+    margin-bottom: 1rem;
+  }
+
+  .related__header h2 {
+    max-width: 22ch;
+    margin: 0 auto;
+  }
+
+  .related__grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+    max-width: 1080px;
+    margin: 0 auto;
+  }
+
+  @media (max-width: 880px) {
+    .related__grid {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  .related__all {
+    text-align: center;
+    margin-top: 2.5rem;
+  }
+
+  .related__all-link {
+    font-family: var(--font-mono);
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    color: var(--kit-orange);
+    text-decoration: underline;
+    text-underline-offset: 4px;
+  }
+
+  .related__card {
+    display: block;
+    background: var(--chalk);
+    border: 2px solid var(--asphalt);
+    border-radius: var(--radius);
+    padding: 1.75rem;
+    text-decoration: none;
+    color: var(--asphalt);
+    transition: transform 0.18s ease, box-shadow 0.18s ease;
+  }
+
+  .related__card:hover {
+    transform: translate(-2px, -2px);
+    box-shadow: 6px 6px 0 var(--asphalt);
+  }
+
+  .related__tag {
+    font-family: var(--font-mono);
+    font-size: 0.72rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--kit-orange);
+    margin-bottom: 0.75rem;
+    display: inline-block;
+  }
+
+  .related__card h3 {
+    font-family: var(--font-display);
+    font-size: 1.4rem;
+    line-height: 1.1;
+    margin-bottom: 0.75rem;
+    letter-spacing: 0.01em;
+  }
+
+  .related__card p {
+    font-size: 0.95rem;
+    color: var(--muted);
+    line-height: 1.5;
+    margin-bottom: 1rem;
+  }
+
+  .related__more {
+    font-family: var(--font-mono);
+    font-size: 0.82rem;
+    font-weight: 600;
+    color: var(--kit-orange);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+  }
+
+  /* FINAL CTA */
+  .final-cta {
+    background: var(--kit-orange);
+    color: var(--chalk);
+    position: relative;
+    overflow: hidden;
+  }
+
+  .final-cta::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-image: repeating-linear-gradient(
+      45deg,
+      transparent,
+      transparent 40px,
+      rgba(244, 241, 234, 0.04) 40px,
+      rgba(244, 241, 234, 0.04) 80px
+    );
+    pointer-events: none;
+  }
+
+  .final-cta__inner {
+    text-align: center;
+    max-width: 720px;
+    margin: 0 auto;
+    position: relative;
+  }
+
+  .final-cta h2 {
+    margin-bottom: 1.5rem;
+  }
+
+  .final-cta p {
+    font-size: 1.05rem;
+    margin: 0 auto 2rem;
+    max-width: 50ch;
+  }
+
+  .final-cta__actions {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+  .final-cta .btn--accent {
+    background: var(--asphalt);
+    border-color: var(--asphalt);
+  }
+
+  .final-cta .btn--ghost {
+    color: var(--chalk);
+    border-color: var(--chalk);
+  }
+
+  .final-cta .btn--ghost:hover {
+    background: var(--chalk);
+    color: var(--asphalt);
+  }
+
+  /* SCROLL REVEAL */
+  .reveal {
+    opacity: 0;
+    transform: translateY(28px);
+    transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+
+  .reveal.is-visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .reveal {
+      opacity: 1;
+      transform: none;
+    }
+  }
+</style>

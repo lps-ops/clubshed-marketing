@@ -1,0 +1,303 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+
+const title = 'Pricing | ClubShed Football Equipment Tracker';
+const description = 'Free for one team, 30 items, 3 coaches. €15.99/month for unlimited. No card required to start.';
+---
+
+<BaseLayout title={title} description={description}>
+  <section class="pricing-hero">
+    <div class="container">
+      <span class="tag">Pricing</span>
+      <h1 class="display">Honest pricing.<br />About the price of one lost football a month.</h1>
+      <p class="pricing-lede">No "contact sales" tiers. No seat-based pricing that punishes you for having more coaches. One paid plan that covers your whole club.</p>
+    </div>
+  </section>
+
+  <section class="plans">
+    <div class="container">
+      <div class="plans__grid">
+
+        <div class="plan">
+          <div class="plan__head">
+            <h2 class="display">Free</h2>
+            <p class="plan__sub">For a single team or a club testing the water.</p>
+          </div>
+          <div class="plan__price">
+            <span class="plan__amount">€0</span>
+            <span class="plan__period">forever</span>
+          </div>
+          <ul class="plan__features">
+            <li><span class="tick">✓</span> 1 team</li>
+            <li><span class="tick">✓</span> Up to 30 equipment items</li>
+            <li><span class="tick">✓</span> Up to 3 coaches</li>
+            <li><span class="tick">✓</span> Photo inventory</li>
+            <li><span class="tick">✓</span> Check-in / check-out log</li>
+            <li><span class="tick">✓</span> Email return reminders</li>
+            <li><span class="tick">✓</span> Mobile-friendly</li>
+          </ul>
+          <a href="https://app.clubshed.pro/signup" class="btn btn--ghost plan__cta">Start free</a>
+          <p class="plan__finer">No card required. Stay free forever if it works for you.</p>
+        </div>
+
+        <div class="plan plan--featured">
+          <div class="plan__badge">Recommended</div>
+          <div class="plan__head">
+            <h2 class="display">Club</h2>
+            <p class="plan__sub">For grassroots and amateur clubs that mean it.</p>
+          </div>
+          <div class="plan__price">
+            <span class="plan__amount">€15.99</span>
+            <span class="plan__period">/ month, billed monthly</span>
+          </div>
+          <ul class="plan__features">
+            <li><span class="tick">✓</span> Unlimited teams</li>
+            <li><span class="tick">✓</span> Unlimited equipment items</li>
+            <li><span class="tick">✓</span> QR code stickers (print at home)</li>
+            <li><span class="tick">✓</span> Coach allocations and handovers</li>
+            <li><span class="tick">✓</span> Custom categories and locations</li>
+            <li><span class="tick">✓</span> End-of-season PDF report</li>
+            <li><span class="tick">✓</span> Automatic email reminders for overdue gear</li>
+            <li><span class="tick">✓</span> Multiple admins</li>
+            <li><span class="tick">✓</span> Priority support (direct email)</li>
+          </ul>
+          <a href="https://app.clubshed.pro/signup?plan=club" class="btn btn--accent plan__cta">Start 14-day trial</a>
+          <p class="plan__finer">14 days of paid features free. No card required. Cancel anytime.</p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <section class="faq">
+    <div class="container">
+      <h2 class="display">Honest answers.</h2>
+
+      <div class="faq__item">
+        <h3>What happens when the 14-day trial ends?</h3>
+        <p>If you've added a card, the Club plan kicks in at €15.99/month. If you haven't, your account rolls back to the Free plan and you keep all your data. Items beyond the 30-item limit stay visible but become read-only until you upgrade or delete some. Nothing is ever deleted. No surprise charges.</p>
+      </div>
+
+      <div class="faq__item">
+        <h3>Why €15.99 and not €49 or €99?</h3>
+        <p>Because grassroots clubs aren't enterprise. Most of you are run by volunteers who pay for things out of their own pocket and claim it back, sometimes. €15.99 is the price a volunteer can sign up for without a committee vote.</p>
+      </div>
+
+      <div class="faq__item">
+        <h3>Can I import from a spreadsheet?</h3>
+        <p>Yes, CSV import is in the Club plan. But honestly, most clubs are better off starting fresh with photos. Your spreadsheet probably has 47 entries that say "ball" anyway.</p>
+      </div>
+
+      <div class="faq__item">
+        <h3>Do you replace Spond or Crossbar?</h3>
+        <p>No. ClubShed is the equipment piece those tools handle badly. Keep using whatever you use for member admin and payments. ClubShed sits next to it for kit and gear.</p>
+      </div>
+
+      <div class="faq__item">
+        <h3>What if I run a bigger club, like 500+ players?</h3>
+        <p>The €15.99 plan still covers you. If you ever need bulk features (multi-site, integrations, etc), email me and we'll figure something out.</p>
+      </div>
+
+      <div class="faq__item">
+        <h3>Will the price go up?</h3>
+        <p>For new customers, maybe. For anyone who signs up at €15.99, the price stays €15.99 for as long as you keep your subscription active. That's the deal.</p>
+      </div>
+
+      <div class="faq__item">
+        <h3>How do I cancel?</h3>
+        <p>One button in your account. No email asking why, no retention call. If ClubShed isn't working for you, that's on us.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="final-cta-pricing">
+    <div class="container">
+      <h2 class="display">Try it. Worst case, you waste 10 minutes.</h2>
+      <a href="https://app.clubshed.pro/signup" class="btn btn--accent">Start free</a>
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  .pricing-hero {
+    padding-top: clamp(3rem, 6vw, 5rem);
+    text-align: center;
+  }
+
+  .pricing-hero .tag {
+    margin-bottom: 1.5rem;
+  }
+
+  .pricing-hero h1 {
+    max-width: 18ch;
+    margin: 0 auto;
+  }
+
+  .pricing-lede {
+    max-width: 56ch;
+    margin: 1.5rem auto 0;
+    color: var(--muted);
+    font-size: 1.05rem;
+  }
+
+  .plans__grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+    max-width: 920px;
+    margin: 0 auto;
+  }
+
+  @media (max-width: 760px) {
+    .plans__grid {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  .plan {
+    background: var(--chalk-warm);
+    border: 2px solid var(--asphalt);
+    border-radius: var(--radius);
+    padding: 2.5rem 2rem;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .plan--featured {
+    background: var(--pitch-deep);
+    color: var(--chalk);
+    border-color: var(--pitch-deep);
+    transform: translateY(-12px);
+    box-shadow: 8px 8px 0 var(--kit-orange);
+  }
+
+  @media (max-width: 760px) {
+    .plan--featured {
+      transform: none;
+    }
+  }
+
+  .plan__badge {
+    position: absolute;
+    top: -14px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: var(--kit-orange);
+    color: var(--chalk);
+    padding: 0.35rem 0.9rem;
+    border-radius: 100px;
+    font-family: var(--font-mono);
+    font-size: 0.72rem;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    font-weight: 600;
+  }
+
+  .plan__head h2 {
+    margin-bottom: 0.5rem;
+  }
+
+  .plan__sub {
+    font-size: 0.95rem;
+    opacity: 0.75;
+    margin-bottom: 2rem;
+  }
+
+  .plan__price {
+    display: flex;
+    align-items: baseline;
+    gap: 0.5rem;
+    margin-bottom: 2rem;
+    padding-bottom: 2rem;
+    border-bottom: 1px solid currentColor;
+    opacity: 1;
+  }
+
+  .plan__amount {
+    font-family: var(--font-display);
+    font-size: 3.5rem;
+    line-height: 1;
+  }
+
+  .plan__period {
+    font-size: 0.95rem;
+    opacity: 0.7;
+  }
+
+  .plan__features {
+    list-style: none;
+    margin-bottom: 2rem;
+    flex: 1;
+  }
+
+  .plan__features li {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.6rem;
+    margin-bottom: 0.65rem;
+    font-size: 0.95rem;
+  }
+
+  .tick {
+    color: var(--kit-orange);
+    font-weight: 700;
+  }
+
+  .plan--featured .tick {
+    color: var(--kit-orange-soft);
+  }
+
+  .plan__cta {
+    width: 100%;
+    justify-content: center;
+    margin-bottom: 0.75rem;
+  }
+
+  .plan--featured .plan__cta {
+    color: var(--chalk);
+    border-color: var(--kit-orange);
+    background: var(--kit-orange);
+  }
+
+  .plan__finer {
+    font-size: 0.82rem;
+    opacity: 0.65;
+    text-align: center;
+    font-family: var(--font-mono);
+  }
+
+  /* FAQ */
+  .faq h2 {
+    text-align: center;
+    margin-bottom: 3rem;
+  }
+
+  .faq__item {
+    max-width: 720px;
+    margin: 0 auto 2rem;
+    padding-bottom: 1.5rem;
+    border-bottom: 1px solid var(--line);
+  }
+
+  .faq__item h3 {
+    font-size: 1.15rem;
+    margin-bottom: 0.5rem;
+    font-weight: 600;
+  }
+
+  .faq__item p {
+    color: var(--muted);
+    font-size: 0.95rem;
+  }
+
+  .final-cta-pricing {
+    text-align: center;
+    background: var(--chalk-warm);
+    border-top: 2px solid var(--asphalt);
+  }
+
+  .final-cta-pricing h2 {
+    margin-bottom: 2rem;
+  }
+</style>

@@ -1,0 +1,298 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+
+const title = 'Contact ClubShed | Get in touch with the founder';
+const description = 'Get in touch with ClubShed. Messages reach the founder directly, usually answered within 24 hours.';
+
+const apiUrl = 'https://api.clubshed.pro/api/contact';
+---
+
+<BaseLayout title={title} description={description}>
+  <article class="contact-page">
+    <div class="container">
+
+      <header class="contact-page__header">
+        <span class="tag">Contact</span>
+        <h1 class="display">Get in touch.</h1>
+        <p class="contact-page__lede">
+          ClubShed is small. Messages reach a real human, usually answered within 24 hours.
+        </p>
+      </header>
+
+      <section class="contact-page__form-section">
+        <form id="contactForm" class="contact-page__form" data-api={apiUrl}>
+          <div class="contact-page__field">
+            <label for="contactName">Your name</label>
+            <input
+              type="text"
+              id="contactName"
+              name="name"
+              autocomplete="name"
+              maxlength="100"
+              placeholder="Your name"
+            />
+          </div>
+
+          <div class="contact-page__field">
+            <label for="contactEmail">Your email</label>
+            <input
+              type="email"
+              id="contactEmail"
+              name="email"
+              autocomplete="email"
+              required
+              maxlength="254"
+              placeholder="you@example.com"
+            />
+          </div>
+
+          <div class="contact-page__field">
+            <label for="contactMessage">Message</label>
+            <textarea
+              id="contactMessage"
+              name="message"
+              rows="6"
+              required
+              maxlength="5000"
+              placeholder="What's on your mind? Questions, feedback, bug reports, club chat, all welcome."
+            ></textarea>
+          </div>
+
+          <!-- Honeypot -->
+          <div aria-hidden="true" class="contact-page__hp">
+            <label>Website (leave blank)<input type="text" name="website" tabindex="-1" autocomplete="off" /></label>
+          </div>
+
+          <button type="submit" class="btn btn--accent btn--lg contact-page__submit">Send message</button>
+          <p class="contact-page__status" id="contactStatus" role="status" aria-live="polite"></p>
+        </form>
+
+        <p class="contact-page__alt">
+          Or email directly: <a href="mailto:hello@clubshed.pro">hello@clubshed.pro</a>
+        </p>
+      </section>
+
+      <section class="contact-page__methods">
+        <div class="contact-page__method">
+          <h2 class="display">Grassroots clubs</h2>
+          <p>If you run a grassroots football club and want to share what your equipment process looks like (or where it breaks down), I'd genuinely like to hear from you. Even 15 minutes of your time helps shape what ClubShed becomes. Mention "Club chat" in your message and I'll find a time that works.</p>
+        </div>
+
+        <div class="contact-page__method">
+          <h2 class="display">Press and partnerships</h2>
+          <p>Same form, but mention "press" or "partnership" so it filters through faster.</p>
+        </div>
+      </section>
+
+      <section class="contact-page__finer">
+        <h3>What we don't do</h3>
+        <ul>
+          <li>Live chat (one founder, can't be on chat all day)</li>
+          <li>Phone support (email is faster for everyone)</li>
+          <li>Ticketed support portals (this isn't enterprise software)</li>
+          <li>Cold sales calls (we don't make them, we don't take them)</li>
+        </ul>
+      </section>
+
+    </div>
+  </article>
+</BaseLayout>
+
+<script is:inline>
+  (function () {
+    const form = document.getElementById('contactForm');
+    if (!form) return;
+    const status = document.getElementById('contactStatus');
+    const submit = form.querySelector('button[type="submit"]');
+    const apiUrl = form.dataset.api;
+
+    function setStatus(msg, kind) {
+      status.textContent = msg;
+      status.dataset.kind = kind || '';
+    }
+
+    form.addEventListener('submit', async (e) => {
+      e.preventDefault();
+      const fd = new FormData(form);
+      const payload = {
+        name: (fd.get('name') || '').trim(),
+        email: (fd.get('email') || '').trim(),
+        message: (fd.get('message') || '').trim(),
+        website: fd.get('website') || '',
+      };
+
+      if (payload.message.length < 5) {
+        setStatus('Please write a message of at least 5 characters.', 'error');
+        return;
+      }
+
+      setStatus('Sending...', 'pending');
+      submit.disabled = true;
+
+      try {
+        const res = await fetch(apiUrl, {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(payload),
+        });
+        const data = await res.json().catch(() => ({}));
+
+        if (res.ok) {
+          setStatus("Got your message. We'll reply within 24 hours.", 'success');
+          form.reset();
+        } else {
+          setStatus(data.error || 'Something went wrong. Try emailing hello@clubshed.pro directly.', 'error');
+        }
+      } catch (err) {
+        setStatus('Could not reach the server. Email hello@clubshed.pro directly.', 'error');
+      } finally {
+        submit.disabled = false;
+      }
+    });
+  })();
+</script>
+
+<style>
+  .contact-page {
+    padding: clamp(3rem, 6vw, 5rem) 0 clamp(4rem, 8vw, 6rem);
+  }
+  .contact-page .container {
+    max-width: 680px;
+  }
+  .contact-page__header {
+    margin-bottom: 3rem;
+  }
+  .contact-page__header .tag {
+    margin-bottom: 1.5rem;
+  }
+  .contact-page__header h1 {
+    font-size: clamp(2.5rem, 5vw, 4rem);
+    margin-bottom: 1.5rem;
+  }
+  .contact-page__lede {
+    font-size: clamp(1.05rem, 1.4vw, 1.2rem);
+    color: var(--muted);
+    line-height: 1.55;
+  }
+  .contact-page__form-section {
+    margin-bottom: 3rem;
+    padding: 2.5rem 2rem;
+    background: var(--chalk-warm);
+    border: 2px solid var(--asphalt);
+    border-radius: var(--radius);
+  }
+  .contact-page__form {
+    margin: 0 auto;
+    max-width: 540px;
+  }
+  .contact-page__field {
+    margin-bottom: 1.25rem;
+  }
+  .contact-page__field label {
+    display: block;
+    font-family: var(--font-mono);
+    font-size: 0.78rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: var(--asphalt);
+    margin-bottom: 0.5rem;
+  }
+  .contact-page__field input,
+  .contact-page__field textarea {
+    width: 100%;
+    padding: 0.85rem 1rem;
+    border: 2px solid var(--asphalt);
+    background: var(--chalk);
+    color: var(--asphalt);
+    border-radius: var(--radius-sm);
+    font-family: var(--font-body);
+    font-size: 1rem;
+    box-sizing: border-box;
+    resize: vertical;
+  }
+  .contact-page__field textarea {
+    min-height: 140px;
+  }
+  .contact-page__field input:focus,
+  .contact-page__field textarea:focus {
+    outline: 3px solid var(--kit-orange);
+    outline-offset: 2px;
+  }
+  .contact-page__hp {
+    position: absolute;
+    left: -9999px;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+  }
+  .contact-page__submit {
+    width: 100%;
+    margin-top: 0.5rem;
+  }
+  .contact-page__status {
+    text-align: center;
+    margin-top: 1rem;
+    min-height: 1.5rem;
+    font-size: 0.95rem;
+  }
+  .contact-page__status[data-kind="error"] {
+    color: var(--alert-red, #d62828);
+  }
+  .contact-page__status[data-kind="success"] {
+    color: var(--grass-bright, #4a8f5e);
+    font-weight: 600;
+  }
+  .contact-page__status[data-kind="pending"] {
+    color: var(--muted);
+  }
+  .contact-page__alt {
+    text-align: center;
+    margin-top: 1.5rem;
+    font-family: var(--font-mono);
+    font-size: 0.85rem;
+    color: var(--muted);
+  }
+  .contact-page__alt a {
+    color: var(--kit-orange);
+    text-decoration: underline;
+  }
+  .contact-page__methods {
+    margin-bottom: 3rem;
+  }
+  .contact-page__method {
+    padding: 1.5rem 0;
+    border-bottom: 1px solid var(--line);
+  }
+  .contact-page__method:last-child {
+    border-bottom: none;
+  }
+  .contact-page__method h2 {
+    font-size: clamp(1.5rem, 2.5vw, 2rem);
+    margin-bottom: 0.75rem;
+  }
+  .contact-page__method p {
+    margin-bottom: 0;
+    line-height: 1.6;
+    max-width: 60ch;
+  }
+  .contact-page__finer {
+    margin-top: 2rem;
+    padding-top: 2rem;
+    border-top: 1px solid var(--line);
+  }
+  .contact-page__finer h3 {
+    font-family: var(--font-display);
+    font-size: 1.1rem;
+    margin-bottom: 1rem;
+    color: var(--muted);
+  }
+  .contact-page__finer ul {
+    margin: 0 0 0 1.25rem;
+    color: var(--muted);
+  }
+  .contact-page__finer li {
+    margin-bottom: 0.4rem;
+    font-size: 0.95rem;
+  }
+</style>

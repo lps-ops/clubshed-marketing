@@ -1,0 +1,213 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+
+const title = 'About ClubShed | Built by a grassroots club co-founder';
+const description = 'Built by Lucas Seewald, co-founder of HVV Football Factory. After years of watching equipment disappear every season, he built the tool he wished his club had.';
+---
+
+<BaseLayout title={title} description={description}>
+  <article class="about">
+    <div class="container">
+
+      <header class="about__header">
+        <span class="tag">About</span>
+        <h1 class="display">Built by someone<br />who lost the footballs.</h1>
+        <p class="about__lede">
+          ClubShed exists because grassroots football clubs lose hundreds of pounds in equipment every season, and nobody has built a tool that actually fits how clubs work. So I built one.
+        </p>
+      </header>
+
+      <section class="about__section">
+        <h2 class="display">The founder</h2>
+        <div class="about__founder">
+          <div class="about__avatar" aria-hidden="true">L</div>
+          <div class="about__founder-body">
+            <h3>Lucas Seewald</h3>
+            <p class="about__role">Co-founder, HVV Football Factory · Builder of ClubShed</p>
+            <p>I co-founded HVV Football Factory, a grassroots football club, and spent years dealing with the same problem every other club secretary on the planet deals with: nobody knows what we own, where it is, or who took it home. Every season we replaced footballs, bibs, and cones we probably already owned. Every committee meeting included someone saying "we need a system."</p>
+            <p>My background is in marketing (six years across B2B and B2C, in DACH and across Europe). I've worked at companies like Bunq and Ekster, built and launched my own SaaS products, and speak German and English natively. None of which is the qualification that matters most for building ClubShed. The qualification that matters is that I actually ran a football club.</p>
+            <p>ClubShed is built around how clubs really work, not how a software company imagines they work. The dashboard is called "Monday-morning state of the cupboard" for a reason: that's exactly when you open it. The audit report PDF exists because every club needs one for grant applications and nobody has time to make it from scratch.</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="about__section">
+        <h2 class="display">Why this exists</h2>
+        <p>The grassroots football software space is dominated by all-in-one platforms (Spond, LoveAdmin, Crossbar, TeamFeePay) that do payments, member management, fixtures, and equipment as an afterthought. The equipment piece is always a basic asset list bolted onto the real product. None of these tools handle the workflows that actually matter:</p>
+        <ul>
+          <li>A coach checking out six balls in two taps from the kit cupboard, on their phone, with one hand</li>
+          <li>An audit log showing exactly when the bibs went missing</li>
+          <li>QR stickers you can actually print and stick on real bags</li>
+          <li>An end-of-season report you can submit to the FA Community Football Fund without rewriting it from scratch</li>
+          <li>Automatic email reminders for the coach who hasn't returned the cones for three weeks</li>
+        </ul>
+        <p>ClubShed does these things. Nothing more. We're not trying to replace Spond, keep using Spond for fixtures and member admin. ClubShed sits next to it for the equipment piece that Spond doesn't do.</p>
+      </section>
+
+      <section class="about__section">
+        <h2 class="display">What I believe</h2>
+        <p><strong>Volunteers, not enterprise.</strong> Most "club management software" is priced and designed for paid staff. Your kit man is a volunteer who pays out of their own pocket and claims it back if they're lucky. €15.99 a month is the price a volunteer can sign up for without a committee vote. That's the deal.</p>
+        <p><strong>Photos beat descriptions.</strong> "Orange bibs set large" means nothing when you have three orange bibs sets that look identical. A photo of the actual gear plus a unique QR code on a sticker means everything. ClubShed is photo-first because the kit cupboard is.</p>
+        <p><strong>Honest defaults.</strong> Your equipment defaults to "in storage" not "out." Coaches mark the few items that leave, not the many that stay. This is how the data stays clean over a season instead of rotting in week three.</p>
+        <p><strong>The yearly audit is the moment of truth.</strong> Once a year, in May or June, someone in your club has to answer "what did we lose this season?" If ClubShed has been used week-to-week, that question takes one click instead of one Saturday afternoon.</p>
+      </section>
+
+      <section class="about__section about__contact">
+        <h2 class="display">Get in touch</h2>
+        <p>Building ClubShed in public. If you run a grassroots club and want to share what your equipment process looks like (or doesn't), I'd genuinely like to hear from you.</p>
+        <p><strong>Email:</strong> <a href="mailto:hello@clubshed.pro">hello@clubshed.pro</a></p>
+        <p class="about__finer">No marketing newsletter. I reply to emails personally, usually within a day.</p>
+      </section>
+
+      <section class="about__cta">
+        <h2 class="display">Try ClubShed.</h2>
+        <p>Free for one team, 30 items, and 3 coaches. €15.99 a month for unlimited everything when you're ready.</p>
+        <a href="https://app.clubshed.pro/signup" class="btn btn--accent">Start free</a>
+      </section>
+
+    </div>
+  </article>
+</BaseLayout>
+
+<style>
+  .about {
+    padding: clamp(3rem, 6vw, 5rem) 0 clamp(4rem, 8vw, 6rem);
+  }
+
+  .about .container {
+    max-width: 780px;
+  }
+
+  .about__header {
+    margin-bottom: 3.5rem;
+  }
+
+  .about__header .tag {
+    margin-bottom: 1.5rem;
+  }
+
+  .about__header h1 {
+    font-size: clamp(2.5rem, 5.5vw, 4.5rem);
+    margin-bottom: 1.5rem;
+  }
+
+  .about__lede {
+    font-size: clamp(1.1rem, 1.5vw, 1.25rem);
+    color: var(--muted);
+    line-height: 1.55;
+    max-width: 60ch;
+  }
+
+  .about__section {
+    margin-bottom: 3.5rem;
+  }
+
+  .about__section h2 {
+    margin-bottom: 1.5rem;
+    font-size: clamp(1.75rem, 3vw, 2.5rem);
+  }
+
+  .about__section p {
+    margin-bottom: 1.1rem;
+    line-height: 1.65;
+    max-width: 66ch;
+  }
+
+  .about__section strong {
+    font-weight: 600;
+  }
+
+  .about__section ul {
+    margin: 0 0 1.5rem 1.25rem;
+    max-width: 66ch;
+  }
+
+  .about__section li {
+    margin-bottom: 0.5rem;
+    line-height: 1.6;
+  }
+
+  .about__founder {
+    display: flex;
+    gap: 1.5rem;
+    align-items: flex-start;
+    background: var(--chalk-warm);
+    border: 2px solid var(--asphalt);
+    border-radius: var(--radius);
+    padding: 1.75rem;
+    margin-bottom: 1.5rem;
+  }
+
+  @media (max-width: 560px) {
+    .about__founder {
+      flex-direction: column;
+      gap: 1rem;
+    }
+  }
+
+  .about__avatar {
+    width: 76px;
+    height: 76px;
+    border-radius: 50%;
+    background: var(--pitch);
+    color: var(--chalk);
+    display: grid;
+    place-items: center;
+    font-family: var(--font-display);
+    font-size: 2.4rem;
+    flex-shrink: 0;
+  }
+
+  .about__founder-body h3 {
+    font-family: var(--font-display);
+    font-size: 1.75rem;
+    line-height: 1;
+    margin-bottom: 0.35rem;
+    letter-spacing: 0.01em;
+  }
+
+  .about__role {
+    font-family: var(--font-mono);
+    font-size: 0.85rem;
+    color: var(--muted);
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    margin-bottom: 1.25rem !important;
+  }
+
+  .about__founder-body p {
+    margin-bottom: 1rem;
+    color: var(--asphalt);
+  }
+
+  .about__contact a {
+    color: var(--kit-orange);
+    text-decoration: underline;
+    text-underline-offset: 3px;
+  }
+
+  .about__finer {
+    font-family: var(--font-mono);
+    font-size: 0.85rem;
+    color: var(--muted) !important;
+  }
+
+  .about__cta {
+    margin-top: 4rem;
+    padding: 2.5rem 2rem;
+    background: var(--pitch-deep);
+    color: var(--chalk);
+    border-radius: var(--radius);
+    text-align: center;
+  }
+
+  .about__cta h2 {
+    margin-bottom: 1rem;
+  }
+
+  .about__cta p {
+    margin: 0 auto 1.5rem;
+    max-width: 50ch;
+    opacity: 0.85;
+  }
+</style>

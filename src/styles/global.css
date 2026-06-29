@@ -1,0 +1,237 @@
+/* ClubShed design system
+ * Aesthetic: utilitarian sports, honest, kit-bag-not-boardroom
+ * Type pairing: industrial display + clean grotesk body
+ * Palette: chalk white, pitch green, asphalt black, kit orange accent
+ */
+
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter+Tight:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap');
+
+:root {
+  /* Colors */
+  --chalk: #f4f1ea;
+  --chalk-warm: #ebe6da;
+  --pitch: #1a2e1f;
+  --pitch-deep: #0e1a12;
+  --grass: #2d5a3d;
+  --grass-bright: #4a8f5e;
+  --asphalt: #1c1c1c;
+  --line: #d4cfc1;
+  --kit-orange: #e8552a;
+  --kit-orange-soft: #f4a58a;
+  --muted: #6b665a;
+
+  /* Type */
+  --font-display: 'Bebas Neue', 'Impact', sans-serif;
+  --font-body: 'Inter Tight', system-ui, sans-serif;
+  --font-mono: 'JetBrains Mono', monospace;
+
+  /* Spacing */
+  --container: 1240px;
+  --gutter: clamp(1.25rem, 3vw, 2.5rem);
+
+  /* Radius */
+  --radius-sm: 4px;
+  --radius: 8px;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-body);
+  background: var(--chalk);
+  color: var(--asphalt);
+  line-height: 1.55;
+  font-size: 17px;
+  font-feature-settings: 'ss01', 'cv11';
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+  background-image:
+    radial-gradient(circle at 20% 0%, rgba(45, 90, 61, 0.04) 0%, transparent 50%),
+    radial-gradient(circle at 80% 100%, rgba(232, 85, 42, 0.03) 0%, transparent 50%);
+  min-height: 100vh;
+}
+
+/* Subtle grain texture overlay */
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 1;
+  opacity: 0.4;
+  mix-blend-mode: multiply;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' /%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.08'/%3E%3C/svg%3E");
+}
+
+.container {
+  width: 100%;
+  max-width: var(--container);
+  margin: 0 auto;
+  padding: 0 var(--gutter);
+  position: relative;
+  z-index: 2;
+}
+
+/* Headings */
+.display {
+  font-family: var(--font-display);
+  font-weight: 400;
+  line-height: 0.95;
+  letter-spacing: 0.005em;
+  text-transform: uppercase;
+}
+
+h1.display {
+  font-size: clamp(3rem, 8vw, 7rem);
+}
+
+h2.display {
+  font-size: clamp(2.25rem, 5vw, 4rem);
+}
+
+h3.display {
+  font-size: clamp(1.5rem, 3vw, 2.25rem);
+}
+
+p {
+  max-width: 62ch;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+/* Buttons */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.85rem 1.5rem;
+  font-family: var(--font-body);
+  font-weight: 600;
+  font-size: 0.95rem;
+  letter-spacing: 0.01em;
+  border: 2px solid var(--asphalt);
+  border-radius: var(--radius);
+  background: var(--asphalt);
+  color: var(--chalk);
+  cursor: pointer;
+  transition: transform 0.15s ease, box-shadow 0.15s ease, background 0.15s ease;
+  text-decoration: none;
+}
+
+.btn:hover {
+  transform: translate(-2px, -2px);
+  box-shadow: 4px 4px 0 var(--pitch);
+}
+
+.btn--ghost {
+  background: transparent;
+  color: var(--asphalt);
+}
+
+.btn--ghost:hover {
+  background: var(--asphalt);
+  color: var(--chalk);
+  box-shadow: 4px 4px 0 var(--kit-orange);
+}
+
+.btn--accent {
+  background: var(--kit-orange);
+  border-color: var(--kit-orange);
+  color: var(--chalk);
+}
+
+.btn--accent:hover {
+  box-shadow: 4px 4px 0 var(--asphalt);
+}
+
+/* Tags / pills */
+.tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.3rem 0.7rem;
+  background: transparent;
+  border: 1.5px solid var(--asphalt);
+  border-radius: 100px;
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+.tag--filled {
+  background: var(--asphalt);
+  color: var(--chalk);
+}
+
+.tag--accent {
+  background: var(--kit-orange);
+  border-color: var(--kit-orange);
+  color: var(--chalk);
+}
+
+/* Stat numbers (sports-style) */
+.stat-num {
+  font-family: var(--font-display);
+  font-size: clamp(3rem, 6vw, 5rem);
+  line-height: 1;
+  color: var(--pitch);
+}
+
+/* Section spacing */
+section {
+  padding: clamp(4rem, 9vw, 7rem) 0;
+}
+
+/* Pitch line decorations */
+.pitch-line {
+  height: 1px;
+  background: var(--line);
+  margin: 0;
+}
+
+.pitch-line--strong {
+  height: 2px;
+  background: var(--asphalt);
+}
+
+/* Reveal animations */
+@keyframes rise {
+  from { opacity: 0; transform: translateY(24px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.rise {
+  animation: rise 0.7s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+.rise-1 { animation-delay: 0.05s; }
+.rise-2 { animation-delay: 0.15s; }
+.rise-3 { animation-delay: 0.25s; }
+.rise-4 { animation-delay: 0.35s; }
+.rise-5 { animation-delay: 0.45s; }
+
+/* Focus state */
+:focus-visible {
+  outline: 2px solid var(--kit-orange);
+  outline-offset: 3px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+  }
+}

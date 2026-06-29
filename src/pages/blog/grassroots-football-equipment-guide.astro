@@ -1,0 +1,263 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import AuthorByline from '../../components/AuthorByline.astro';
+
+const title = 'How to Stop Losing Football Equipment: Club Guide | ClubShed';
+const description = 'A practical playbook for clubs losing €1,000+ in equipment per season. Inventory systems, allocation workflows, audit habits.';
+const publishDate = '2026-05-19';
+const updateDate = '2026-05-20';
+---
+
+<BaseLayout title={title} description={description} type="article" publishDate={publishDate} updateDate={updateDate}>
+  <article class="post">
+    <div class="container">
+
+      <header class="post-header">
+        <div class="post-header__meta">
+          <span class="tag tag--filled">Equipment</span>
+        </div>
+        <h1 class="display">The Grassroots Football Club Guide to Stopping Equipment From Disappearing</h1>
+        <p class="post-header__lede">If your club replaces three or more balls a month and nobody can quite explain why, this guide is for you. It's the playbook I wish I'd had at HVV Football Factory.</p>
+        <AuthorByline publishDate={publishDate} updateDate={updateDate} readTime="11 min read" />
+      </header>
+
+      <div class="post-toc">
+        <strong>What's in this guide</strong>
+        <ol>
+          <li><a href="#why">Why equipment disappears (it's not theft)</a></li>
+          <li><a href="#cost">What it actually costs you per season</a></li>
+          <li><a href="#system">Building a system that volunteers will actually use</a></li>
+          <li><a href="#allocation">The allocation problem and how to solve it</a></li>
+          <li><a href="#audit">The end-of-season audit that saves the budget</a></li>
+          <li><a href="#tools">Tools: spreadsheet, QR codes, or software</a></li>
+          <li><a href="#start">A 30-minute starting plan</a></li>
+        </ol>
+      </div>
+
+      <section id="why" class="post-section">
+        <h2 class="display">Why equipment disappears (it's not theft)</h2>
+        <p>If you've ever sat in a club committee meeting and listened to someone darkly hint that maybe a coach is "borrowing" gear, you know how the conversation goes. It's almost never that. Equipment disappears because of three boring, unsexy reasons.</p>
+        <p><strong>Nobody knows what the club owns in the first place.</strong> When you can't list it, you can't miss it. The club bought 30 bibs three years ago. Who remembers? Was it 30 or 50? Were they all orange or were some blue?</p>
+        <p><strong>Nobody knows where things are right now.</strong> Coach Marco took six balls to Tuesday training. Did he bring six back? Probably. Did he put them in the cupboard? Probably. Are they still there on Saturday? Who knows.</p>
+        <p><strong>Nobody is responsible.</strong> "The kit man" is a volunteer who also has a day job. They get sick, they miss a week, and suddenly nobody opens the cupboard for ten days. Things drift.</p>
+        <p>You are not losing equipment because people are dishonest. You are losing it because there is no system. The good news: a system is cheap and small. The bad news: most clubs don't put one in until they've already lost a year's worth of gear.</p>
+      </section>
+
+      <section id="cost" class="post-section">
+        <h2 class="display">What it actually costs you per season</h2>
+        <p>Let me do the maths so the committee can stop pretending this isn't a real number.</p>
+        <p>A typical grassroots club with four teams (say U10, U12, U14, and a senior side) and 15-20 coaches and volunteers across the year, runs through this kind of replacement spend in a season:</p>
+        <ul>
+          <li>Footballs: 12 to 24 replacements at €15-25 each, so €180-€600</li>
+          <li>Bibs sets: at least one full set replaced, €40-€80</li>
+          <li>Cones: a bag or two, €30-€60</li>
+          <li>GK gloves: a pair or two lost, €40-€80</li>
+          <li>First aid kits restocked beyond actual use, €30-€60</li>
+          <li>Pump, whistle, ball bag, the small stuff: €50-€100</li>
+        </ul>
+        <p>Conservatively, you're looking at €400-€1,000 per season in losses that aren't really losses, they're misplacements. For larger clubs running six to ten teams it gets worse fast.</p>
+        <p>That's a season's worth of pitch rental. That's a sponsor partnership you don't need to chase. That's a coach education course you couldn't afford last year.</p>
+      </section>
+
+      <section id="system" class="post-section">
+        <h2 class="display">Building a system that volunteers will actually use</h2>
+        <p>Every club admin tool ever invented dies on the same hill: volunteers won't use it. Coaches especially. If your system requires a coach to fill in a form or update a spreadsheet after every training session, it will fail in three weeks.</p>
+        <p>A system that works has four properties.</p>
+        <p><strong>One step to log out, one step to log in.</strong> If checking out a ball takes more than fifteen seconds, nobody will do it. A photo and a name beats a form every time.</p>
+        <p><strong>Mobile-first.</strong> The kit cupboard is not where a laptop lives. Whatever system you use has to work on a coach's phone, in poor lighting, with one hand because the other one is holding a ball bag.</p>
+        <p><strong>Photos beat descriptions.</strong> "Orange bibs set, large" means nothing when you have three orange bibs sets that look almost identical. A photo of the actual item plus a unique number on a sticker means everything.</p>
+        <p><strong>Defaults to "in storage" not "out."</strong> If your default state is that something is checked out and people have to mark it back in, your data rots fast. Default to "in storage" and have people mark out the few things that leave. Most equipment doesn't move most weeks.</p>
+      </section>
+
+      <section id="allocation" class="post-section">
+        <h2 class="display">The allocation problem and how to solve it</h2>
+        <p>"Allocation" sounds bureaucratic, but it's really one question: which gear belongs to which team, and which gear is shared?</p>
+        <p>The mistake most clubs make is treating everything as shared. The cupboard is communal, anyone can grab anything. This sounds democratic and works terribly. Nobody owns the orange bibs, so nobody chases them when they go missing.</p>
+        <p>The fix is two buckets.</p>
+        <p><strong>Team-allocated:</strong> match kit, a dedicated set of training bibs, a labelled ball bag with a set number of balls. Each team has its own. The U14 coach is responsible for the U14 set. They check it at the start and end of every term.</p>
+        <p><strong>Shared pool:</strong> things that genuinely move around. The pump, the spare GK gloves, the first aid kit. These live in the central cupboard and anyone can take them, but each one has a sticker and a name attached when it leaves.</p>
+        <p>The split should lean heavily toward team-allocated. If a team has 22 players and you have four teams, give each team its own everything. The cost up front is real (maybe €200-€400 per team), but it saves multiples of that over a season.</p>
+      </section>
+
+      <section id="audit" class="post-section">
+        <h2 class="display">The end-of-season audit that saves the budget</h2>
+        <p>An audit sounds dull. It is dull. It also pays for itself within an hour.</p>
+        <p>At the end of every season (and ideally at the end of every term), one person, alone or with one other person, opens the cupboard and lists everything. Counts the balls. Counts the bibs. Photographs the lot. Compares to the same list from the previous audit.</p>
+        <p>The gap between "what we had" and "what we have" is the loss. Knowing that number lets the committee do three things they currently can't:</p>
+        <ol>
+          <li>Budget realistically for next season. You stop discovering in October that you need €600 of new gear you didn't plan for.</li>
+          <li>Spot patterns. If the orange bibs go missing every season and the blue ones don't, that tells you something about which team is sloppy.</li>
+          <li>Make a case to sponsors. "Here's our equipment audit, here's our annual loss rate, here's what your sponsorship covers" is a real pitch. Vague is bad. Numbers are good.</li>
+        </ol>
+      </section>
+
+      <section id="tools" class="post-section">
+        <h2 class="display">Tools: spreadsheet, QR codes, or software</h2>
+        <p>You have three realistic options for actually doing this. They're not equally good, but the best one isn't always the most expensive one.</p>
+        <p><strong>Option 1: A shared spreadsheet.</strong> Google Sheets, one tab per category, one row per item, columns for location, current holder, and date checked out. Free. Works for very small clubs (one team, maybe two). Falls apart fast because spreadsheets are a desktop tool and the kit cupboard is a phone moment. Also, photos in spreadsheets are a nightmare.</p>
+        <p><strong>Option 2: Spreadsheet plus printed QR codes.</strong> Generate a QR code for each item using a free tool, stick it on the gear, point it at a Google Form that updates the spreadsheet. Free, takes a weekend to set up, works surprisingly well. The catch is the seams: the form gets out of sync, the codes wear off, nobody remembers what URL to scan to. Maintenance is real.</p>
+        <p><strong>Option 3: Purpose-built software.</strong> A tool like <a href="/">ClubShed</a> handles the photo, the QR sticker, the check-in and check-out, the allocation, the reminders, and the audit log without you having to glue anything together. The cost is real (€15.99/month for ClubShed) but the time saved is real too. The break-even is usually three or four months for a club with four teams.</p>
+        <p>None of these is wrong. If you have one team and a tight budget, start with the spreadsheet. If you have three or more teams and a kit cupboard with anything in it worth tracking, the maths on software starts winning.</p>
+      </section>
+
+      <section id="start" class="post-section">
+        <h2 class="display">A 30-minute starting plan</h2>
+        <p>You don't need to do everything in this guide this season. You can start in thirty minutes, this week.</p>
+        <ol class="post-plan">
+          <li><strong>Open the cupboard.</strong> Take a photo of everything in it. Yes, just one chaotic photo. This is your before picture.</li>
+          <li><strong>Count three things.</strong> How many balls, how many bibs sets, how many cones. Write the numbers down. Date it.</li>
+          <li><strong>Pick one team.</strong> The most organised one. Give them their own set of match balls, bibs, and cones. Label the bag with the team name and the date.</li>
+          <li><strong>Tell the coaches.</strong> One WhatsApp message: "From now on, the U14 bag belongs to U14. Anything from the shared cupboard, drop a message in here when you take it and when you bring it back."</li>
+          <li><strong>Diarise the next audit.</strong> Pick a date six weeks from today. Put it in your calendar. Be the person who actually does the audit.</li>
+        </ol>
+        <p>That's it. Six weeks from now you'll know more about what your club owns than you do today, and you'll have a baseline to improve on. Whether you stick with WhatsApp or move to a tool like ClubShed, the muscle is what matters.</p>
+      </section>
+
+      <section class="post-cta">
+        <h2 class="display">Want the tool that does all this for you?</h2>
+        <p>ClubShed is free for one team, €15.99/month for a whole club. Built by someone who co-founded a football club and got tired of buying the same six balls every season.</p>
+        <a href="https://app.clubshed.pro/signup" class="btn btn--accent">Start free</a>
+      </section>
+
+    </div>
+  </article>
+</BaseLayout>
+
+<style>
+  .post {
+    padding: clamp(3rem, 6vw, 5rem) 0 clamp(4rem, 8vw, 6rem);
+  }
+
+  .post .container {
+    max-width: 760px;
+  }
+
+  .post-header {
+    margin-bottom: 3rem;
+  }
+
+  .post-header__meta {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+    font-family: var(--font-mono);
+    font-size: 0.78rem;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+  }
+
+  .post-header__date,
+  .post-header__time {
+    color: var(--muted);
+  }
+
+  .post-header h1 {
+    font-size: clamp(2.25rem, 5vw, 4rem);
+    margin-bottom: 1.5rem;
+    line-height: 1;
+  }
+
+  .post-header__lede {
+    font-size: clamp(1.1rem, 1.5vw, 1.25rem);
+    color: var(--muted);
+    line-height: 1.5;
+  }
+
+  .post-toc {
+    background: var(--chalk-warm);
+    border-left: 4px solid var(--kit-orange);
+    padding: 1.5rem 1.75rem;
+    margin-bottom: 3rem;
+  }
+
+  .post-toc strong {
+    display: block;
+    font-family: var(--font-display);
+    font-size: 1rem;
+    letter-spacing: 0.05em;
+    margin-bottom: 0.75rem;
+  }
+
+  .post-toc ol {
+    list-style: decimal;
+    padding-left: 1.25rem;
+  }
+
+  .post-toc li {
+    margin-bottom: 0.4rem;
+    font-size: 0.95rem;
+  }
+
+  .post-toc a {
+    color: var(--asphalt);
+    text-decoration: underline;
+    text-decoration-color: var(--line);
+    text-underline-offset: 3px;
+    transition: text-decoration-color 0.15s;
+  }
+
+  .post-toc a:hover {
+    text-decoration-color: var(--kit-orange);
+  }
+
+  .post-section {
+    margin-bottom: 3rem;
+    scroll-margin-top: 100px;
+  }
+
+  .post-section h2 {
+    margin-bottom: 1.25rem;
+    font-size: clamp(1.6rem, 3vw, 2.5rem);
+  }
+
+  .post-section p {
+    margin-bottom: 1.1rem;
+    line-height: 1.65;
+    max-width: 66ch;
+  }
+
+  .post-section ul,
+  .post-section ol {
+    margin: 0 0 1.25rem 1.25rem;
+  }
+
+  .post-section li {
+    margin-bottom: 0.5rem;
+    line-height: 1.6;
+  }
+
+  .post-section strong {
+    font-weight: 600;
+  }
+
+  .post-section a {
+    color: var(--kit-orange);
+    text-decoration: underline;
+    text-underline-offset: 3px;
+  }
+
+  .post-plan li {
+    margin-bottom: 0.75rem;
+    padding-left: 0.25rem;
+  }
+
+  .post-cta {
+    margin-top: 4rem;
+    padding: 2.5rem 2rem;
+    background: var(--pitch-deep);
+    color: var(--chalk);
+    border-radius: var(--radius);
+    text-align: center;
+  }
+
+  .post-cta h2 {
+    margin-bottom: 1rem;
+  }
+
+  .post-cta p {
+    margin: 0 auto 1.5rem;
+    max-width: 50ch;
+    opacity: 0.85;
+  }
+</style>
